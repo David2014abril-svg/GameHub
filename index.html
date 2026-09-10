@@ -3,305 +3,253 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>GameHub</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#070a14;
+color:white
 }
-
-html {
-  scroll-behavior: smooth;
+header{
+position:sticky;
+top:0;
+z-index:50;
+background:#101529;
+border-bottom:1px solid #29304a;
+padding:15px
 }
-
-body {
-  margin: 0;
-  background: #080b16;
-  color: white;
-  font-family: Arial, sans-serif;
+.header{
+max-width:1200px;
+margin:auto
 }
-
-header {
-  background: #111629;
-  padding: 18px 20px;
-  border-bottom: 1px solid #252c45;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+.logo{
+font-size:30px;
+font-weight:900;
+color:#8d6cff;
+margin-bottom:12px
 }
-
-.header-inner {
-  max-width: 1150px;
-  margin: auto;
+.search{
+width:100%;
+padding:14px;
+border-radius:14px;
+border:1px solid #343d5c;
+background:#191f34;
+color:white;
+font-size:16px
 }
-
-.logo {
-  font-size: 30px;
-  font-weight: bold;
-  color: #8b6cff;
-  margin-bottom: 15px;
+main{
+max-width:1200px;
+margin:auto;
+padding:22px
 }
-
-.search {
-  width: 100%;
-  padding: 14px 17px;
-  border-radius: 14px;
-  border: 1px solid #343c58;
-  background: #191f34;
-  color: white;
-  font-size: 16px;
-  outline: none;
+.hero{
+padding:50px 20px;
+text-align:center;
+border-radius:28px;
+background:linear-gradient(135deg,#191d3b,#101526);
+border:1px solid #303957
 }
-
-.search:focus {
-  border-color: #8b6cff;
+.hero h1{
+font-size:clamp(38px,8vw,65px);
+margin:0
 }
-
-main {
-  max-width: 1150px;
-  margin: auto;
-  padding: 25px 18px;
+.hero span{color:#8d6cff}
+.hero p{
+color:#aeb6ca;
+font-size:18px;
+line-height:1.5
 }
-
-.hero {
-  text-align: center;
-  padding: 55px 20px;
-  border-radius: 28px;
-  background: linear-gradient(135deg, #171b35, #101525);
-  border: 1px solid #303754;
+.btn{
+border:0;
+border-radius:12px;
+padding:12px 18px;
+background:#8d6cff;
+color:white;
+font-weight:bold;
+cursor:pointer;
+margin:4px
 }
-
-.hero h1 {
-  font-size: clamp(35px, 8vw, 60px);
-  margin: 0 0 15px;
+.btn.secondary{background:#252d47}
+.btn:hover{opacity:.85}
+h2{margin-top:42px}
+.categories{
+display:flex;
+gap:9px;
+overflow-x:auto;
+padding-bottom:5px
 }
-
-.hero h1 span {
-  color: #8b6cff;
+.category{
+white-space:nowrap;
+padding:10px 16px;
+border-radius:25px;
+border:1px solid #343d59;
+background:#151b2d;
+color:white;
+cursor:pointer
 }
-
-.hero p {
-  color: #aeb6ca;
-  font-size: 18px;
-  max-width: 600px;
-  margin: auto;
-  line-height: 1.5;
+.category.active{background:#8d6cff}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:16px
 }
-
-.buttons {
-  margin-top: 25px;
+.card{
+background:#13192b;
+border:1px solid #29324d;
+border-radius:20px;
+padding:15px;
+transition:.2s
 }
-
-.button {
-  display: inline-block;
-  border: none;
-  padding: 13px 20px;
-  margin: 5px;
-  border-radius: 13px;
-  background: #8b6cff;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
+.card:hover{
+transform:translateY(-4px);
+border-color:#8d6cff
 }
-
-.button:hover {
-  opacity: .85;
+.icon{
+height:125px;
+border-radius:15px;
+background:#202842;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:60px
 }
-
-.button.secondary {
-  background: #252c45;
+.card h3{font-size:21px}
+.card p{
+color:#aeb6ca;
+line-height:1.4
 }
-
-h2 {
-  margin-top: 45px;
-  font-size: 28px;
+.meta{
+display:flex;
+justify-content:space-between;
+color:#929bb1;
+font-size:13px
 }
-
-.categories {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  padding-bottom: 5px;
+.card-actions{
+display:flex;
+gap:7px;
+margin-top:12px
 }
-
-.category {
-  flex-shrink: 0;
-  padding: 10px 16px;
-  border: 1px solid #303852;
-  border-radius: 30px;
-  background: #151b2e;
-  color: white;
-  cursor: pointer;
+.small{
+flex:1;
+padding:10px;
+border:0;
+border-radius:10px;
+background:#252d47;
+color:white;
+cursor:pointer
 }
-
-.category.active,
-.category:hover {
-  background: #8b6cff;
+.small:hover{background:#8d6cff}
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+gap:12px
 }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 18px;
+.feature{
+background:#151b2e;
+border:1px solid #29324d;
+border-radius:18px;
+padding:20px;
+text-align:center
 }
-
-.card {
-  background: #141a2b;
-  border: 1px solid #293149;
-  border-radius: 20px;
-  padding: 16px;
-  transition: .2s;
+.feature strong{
+display:block;
+font-size:27px;
+margin-bottom:8px
 }
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: #8b6cff;
+.dashboard{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:12px
 }
-
-.icon {
-  height: 140px;
-  border-radius: 15px;
-  background: #20283e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 65px;
+.stat{
+background:#151b2e;
+border:1px solid #29324d;
+border-radius:17px;
+padding:18px
 }
-
-.card h3 {
-  margin-bottom: 8px;
-  font-size: 22px;
+.stat b{
+font-size:28px;
+display:block;
+color:#9b7cff
 }
-
-.card p {
-  color: #aeb6ca;
-  min-height: 42px;
+.progress{
+height:9px;
+background:#252d42;
+border-radius:20px;
+overflow:hidden;
+margin-top:8px
 }
-
-.info {
-  display: flex;
-  justify-content: space-between;
-  color: #aeb6ca;
-  font-size: 14px;
-  margin: 12px 0;
+.progress div{
+height:100%;
+background:#8d6cff;
+width:45%
 }
-
-.card-buttons {
-  display: flex;
-  gap: 8px;
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.8);
+z-index:100;
+padding:18px;
+overflow:auto
 }
-
-.small-button {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  background: #252d46;
-  color: white;
-  font-weight: bold;
+.modal-box{
+max-width:650px;
+margin:45px auto;
+background:#141a2d;
+border:1px solid #39435f;
+border-radius:25px;
+padding:23px
 }
-
-.small-button:hover {
-  background: #8b6cff;
+.close{
+float:right;
+border:0;
+background:#292f45;
+color:white;
+padding:9px 12px;
+border-radius:10px;
+cursor:pointer
 }
-
-.empty {
-  display: none;
-  text-align: center;
-  padding: 35px;
-  color: #929bb0;
+.big-icon{
+height:180px;
+background:#202842;
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:90px;
+margin-bottom:20px
 }
-
-footer {
-  text-align: center;
-  padding: 45px 20px;
-  color: #6f7890;
+.activity{
+padding:15px;
+background:#151b2e;
+border-radius:14px;
+margin:8px 0
 }
-
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.75);
-  z-index: 100;
-  padding: 20px;
-  overflow-y: auto;
+.badge{
+display:inline-block;
+padding:8px 11px;
+background:#252d47;
+border-radius:20px;
+margin:4px
 }
-
-.modal-box {
-  max-width: 600px;
-  margin: 60px auto;
-  background: #151b2e;
-  border: 1px solid #343d5c;
-  border-radius: 24px;
-  padding: 25px;
+footer{
+text-align:center;
+padding:45px 20px;
+color:#737d95
 }
-
-.close {
-  float: right;
-  border: none;
-  background: #252c45;
-  color: white;
-  border-radius: 10px;
-  padding: 8px 12px;
-  cursor: pointer;
+.empty{
+text-align:center;
+padding:30px;
+color:#8993aa
 }
-
-.big-icon {
-  height: 180px;
-  background: #20283e;
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 85px;
-  margin-bottom: 20px;
-}
-
-.stars {
-  font-size: 28px;
-  margin: 15px 0;
-}
-
-.star {
-  cursor: pointer;
-  color: #555d73;
-}
-
-.star.selected {
-  color: #ffd34e;
-}
-
-.stat-box {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.stat {
-  background: #20283e;
-  padding: 15px;
-  border-radius: 12px;
-  text-align: center;
-}
-
-.stat strong {
-  display: block;
-  font-size: 20px;
-}
-
-@media(max-width:600px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding: 40px 15px;
-  }
+@media(max-width:600px){
+main{padding:14px}
+.hero{padding:40px 15px}
 }
 </style>
 </head>
@@ -309,290 +257,150 @@ footer {
 <body>
 
 <header>
-  <div class="header-inner">
-    <div class="logo">🎮 GameHub</div>
-
-    <input
-      class="search"
-      id="search"
-      type="text"
-      placeholder="🔎 Search games..."
-      oninput="filterGames()"
-    >
-  </div>
+<div class="header">
+<div class="logo">🎮 GameHub</div>
+<input id="search" class="search"
+placeholder="🔎 Search games, modes and activities..."
+oninput="searchGames()">
+</div>
 </header>
 
 <main>
 
 <section class="hero">
+<h1>Welcome to <span>GameHub</span></h1>
+<p>
+Discover games, complete challenges, collect badges,
+build your streak and find something fun to do every day.
+</p>
 
-  <h1>Welcome to <span>GameHub</span></h1>
-
-  <p>
-    Discover games, find new favorites,
-    explore categories, and see what's trending.
-  </p>
-
-  <div class="buttons">
-    <a class="button" href="#games">Explore Games 🎮</a>
-
-    <button class="button secondary" onclick="randomGame()">
-      🎲 Random Game
-    </button>
-  </div>
-
+<button class="btn" onclick="randomGame()">🎲 Random Game</button>
+<button class="btn secondary" onclick="dailyChallenge()">🎯 Daily Challenge</button>
 </section>
 
 
-<h2>🎯 Browse Categories</h2>
+<h2>👤 Your GameHub</h2>
+
+<div class="dashboard">
+
+<div class="stat">
+<b id="level">1</b>
+Level
+</div>
+
+<div class="stat">
+<b id="xp">0</b>
+XP
+</div>
+
+<div class="stat">
+<b id="streak">1</b>
+Day Streak 🔥
+</div>
+
+<div class="stat">
+<b id="favoritesCount">0</b>
+Favorites ❤️
+</div>
+
+</div>
+
+
+<h2>🏆 Your Progress</h2>
+
+<div class="feature">
+<strong>⭐ Level Progress</strong>
+<div class="progress">
+<div id="xpBar"></div>
+</div>
+<p id="xpText">0 / 100 XP</p>
+</div>
+
+
+<h2>🎯 Things To Do</h2>
+
+<div class="feature-grid">
+
+<div class="feature" onclick="dailyChallenge()">
+<strong>🎯</strong>
+Daily Challenge
+<p>Get a new challenge.</p>
+</div>
+
+<div class="feature" onclick="randomGame()">
+<strong>🎲</strong>
+Random Game
+<p>Let GameHub choose.</p>
+</div>
+
+<div class="feature" onclick="showAchievements()">
+<strong>🏆</strong>
+Achievements
+<p>Collect badges.</p>
+</div>
+
+<div class="feature" onclick="showPoll()">
+<strong>🗳️</strong>
+Daily Poll
+<p>Vote and earn XP.</p>
+</div>
+
+</div>
+
+
+<h2>🔥 Explore Roblox</h2>
 
 <div class="categories">
-
-  <button class="category active" onclick="chooseCategory('All', this)">
-    All
-  </button>
-
-  <button class="category" onclick="chooseCategory('Battle', this)">
-    🔥 Battle
-  </button>
-
-  <button class="category" onclick="chooseCategory('Adventure', this)">
-    🗺️ Adventure
-  </button>
-
-  <button class="category" onclick="chooseCategory('Sandbox', this)">
-    🧱 Sandbox
-  </button>
-
-  <button class="category" onclick="chooseCategory('Fighting', this)">
-    🥊 Fighting
-  </button>
-
+<button class="category active" onclick="filterPlatform('Roblox',this)">Roblox</button>
+<button class="category" onclick="filterPlatform('Fortnite',this)">Fortnite</button>
+<button class="category" onclick="filterPlatform('All',this)">All Games</button>
 </div>
 
 
-<h2 id="games">🔥 Trending Games</h2>
-
-<div class="grid" id="gameGrid">
+<div class="grid" id="games"></div>
 
 
-<div class="card"
-data-name="Fortnite"
-data-category="Battle">
+<h2>⭐ Your Favorites</h2>
+<div id="favorites" class="grid"></div>
 
-<div class="icon">🎯</div>
 
-<h3>Fortnite</h3>
+<h2>🏅 Achievements</h2>
 
-<p>Battle, build, explore, and play with friends.</p>
-
-<div class="info">
-<span>🔥 Trending</span>
-<span>⭐ 4.8</span>
+<div id="badges" class="feature-grid">
+<div class="feature">
+<strong>🌱</strong>
+First Steps
+<p>Open your first game.</p>
 </div>
 
-<div class="card-buttons">
-
-<button class="small-button"
-onclick="openGame('Fortnite')">
-View Game
-</button>
-
-<button class="small-button"
-onclick="favorite('Fortnite')">
-♡ Favorite
-</button>
-
+<div class="feature">
+<strong>🔥</strong>
+Getting Started
+<p>Reach a 3-day streak.</p>
 </div>
 
+<div class="feature">
+<strong>⭐</strong>
+Game Explorer
+<p>Explore 5 games.</p>
 </div>
 
-
-<div class="card"
-data-name="Roblox"
-data-category="Adventure">
-
-<div class="icon">🧱</div>
-
-<h3>Roblox</h3>
-
-<p>Explore millions of experiences made by players.</p>
-
-<div class="info">
-<span>🔥 Trending</span>
-<span>⭐ 4.7</span>
+<div class="feature">
+<strong>🎯</strong>
+Challenge Accepted
+<p>Complete a daily challenge.</p>
 </div>
-
-<div class="card-buttons">
-
-<button class="small-button"
-onclick="openGame('Roblox')">
-View Game
-</button>
-
-<button class="small-button"
-onclick="favorite('Roblox')">
-♡ Favorite
-</button>
-
-</div>
-
-</div>
-
-
-<div class="card"
-data-name="Minecraft"
-data-category="Sandbox">
-
-<div class="icon">⛏️</div>
-
-<h3>Minecraft</h3>
-
-<p>Build, explore, survive, and create anything.</p>
-
-<div class="info">
-<span>⭐ Popular</span>
-<span>⭐ 4.9</span>
-</div>
-
-<div class="card-buttons">
-
-<button class="small-button"
-onclick="openGame('Minecraft')">
-View Game
-</button>
-
-<button class="small-button"
-onclick="favorite('Minecraft')">
-♡ Favorite
-</button>
-
-</div>
-
-</div>
-
-
-<div class="card"
-data-name="Murder Mystery 2"
-data-category="Adventure">
-
-<div class="icon">🔎</div>
-
-<h3>Murder Mystery 2</h3>
-
-<p>Use clues and teamwork to figure out what's happening.</p>
-
-<div class="info">
-<span>🔥 Trending</span>
-<span>⭐ 4.6</span>
-</div>
-
-<div class="card-buttons">
-
-<button class="small-button"
-onclick="openGame('Murder Mystery 2')">
-View Game
-</button>
-
-<button class="small-button"
-onclick="favorite('Murder Mystery 2')">
-♡ Favorite
-</button>
-
-</div>
-
-</div>
-
-
-<div class="card"
-data-name="Super Smash Bros"
-data-category="Fighting">
-
-<div class="icon">🥊</div>
-
-<h3>Super Smash Bros.</h3>
-
-<p>Battle with a huge variety of characters.</p>
-
-<div class="info">
-<span>⭐ Popular</span>
-<span>⭐ 4.7</span>
-</div>
-
-<div class="card-buttons">
-
-<button class="small-button"
-onclick="openGame('Super Smash Bros')">
-View Game
-</button>
-
-<button class="small-button"
-onclick="favorite('Super Smash Bros')">
-♡ Favorite
-</button>
-
-</div>
-
-</div>
-
-
-<div class="card"
-data-name="Steal a Brainrot"
-data-category="Adventure">
-
-<div class="icon">🧠</div>
-
-<h3>Steal a Brainrot</h3>
-
-<p>Collect, trade, and protect your brainrots.</p>
-
-<div class="info">
-<span>🔥 Trending</span>
-<span>⭐ 4.5</span>
-</div>
-
-<div class="card-buttons">
-
-<button class="small-button"
-onclick="openGame('Steal a Brainrot')">
-View Game
-</button>
-
-<button class="small-button"
-onclick="favorite('Steal a Brainrot')">
-♡ Favorite
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="empty" id="empty">
-😕 No games found.
-</div>
-
-
-<h2>❤️ My Favorites</h2>
-
-<div id="favorites">
-<p style="color:#8d96aa;">
-Your favorite games will appear here.
-</p>
 </div>
 
 </main>
 
 
 <footer>
-© 2026 GameHub • Made for gamers 🎮
+🎮 GameHub • Discover something fun every day
 </footer>
 
 
-<!-- GAME POPUP -->
-
-<div class="modal" id="gameModal">
+<div class="modal" id="modal">
 
 <div class="modal-box">
 
@@ -600,44 +408,24 @@ Your favorite games will appear here.
 
 <div class="big-icon" id="modalIcon">🎮</div>
 
-<h1 id="modalTitle">Game</h1>
+<h1 id="modalTitle"></h1>
 
 <p id="modalDescription"></p>
 
-<div class="stars" id="stars">
-<span class="star" onclick="rate(1)">★</span>
-<span class="star" onclick="rate(2)">★</span>
-<span class="star" onclick="rate(3)">★</span>
-<span class="star" onclick="rate(4)">★</span>
-<span class="star" onclick="rate(5)">★</span>
-</div>
+<h2>🎯 Things To Do</h2>
 
-<p id="ratingText">Rate this game</p>
+<div id="modalFeatures"></div>
 
-<div class="stat-box">
+<h2>📊 GameHub Rating</h2>
 
-<div class="stat">
-<strong id="modalRating">4.5</strong>
-Rating
-</div>
-
-<div class="stat">
-<strong>🔥</strong>
-Trending
-</div>
-
-<div class="stat">
-<strong>🎮</strong>
-Game
-</div>
-
-</div>
+<div id="modalRating">⭐ 4.7 / 5</div>
 
 <br>
 
-<button class="button"
-onclick="favoriteCurrent()">
-❤️ Add to Favorites
+<button class="btn" onclick="favoriteCurrent()">❤️ Favorite</button>
+
+<button class="btn secondary" onclick="earnXP(10)">
+⭐ Earn 10 XP
 </button>
 
 </div>
@@ -646,172 +434,441 @@ onclick="favoriteCurrent()">
 
 <script>
 
-const games = {
+const games=[
 
-"Fortnite": {
-icon:"🎯",
-description:"A fast-paced battle game where players can battle, build, explore, and play together."
+{
+name:"Grow a Garden",
+platform:"Roblox",
+icon:"🌱",
+category:"Simulator",
+description:"Grow, collect and build your own garden.",
+features:["🌱 Garden Challenge","🎲 Random Crop","🏆 Collection Goals","🧠 Garden Trivia"]
 },
 
-"Roblox": {
-icon:"🧱",
-description:"A huge gaming platform filled with experiences created by players."
-},
-
-"Minecraft": {
-icon:"⛏️",
-description:"Build, explore, survive, and create your own worlds."
-},
-
-"Murder Mystery 2": {
-icon:"🔎",
-description:"A multiplayer mystery experience where players try to figure out what's going on."
-},
-
-"Super Smash Bros": {
-icon:"🥊",
-description:"A fighting game featuring a large collection of characters."
-},
-
-"Steal a Brainrot": {
+{
+name:"Steal a Brainrot",
+platform:"Roblox",
 icon:"🧠",
-description:"Collect and protect brainrots while competing with other players."
+category:"Collection",
+description:"Explore the chaotic Brainrot world.",
+features:["🧠 Brainrot Picker","🏆 Collection Challenge","🎯 Daily Challenge","🗳️ Brainrot Poll"]
+},
+
+{
+name:"Brookhaven RP",
+platform:"Roblox",
+icon:"🏡",
+category:"Roleplay",
+description:"Explore a social roleplay world.",
+features:["🏡 Roleplay Challenge","🎲 Random Activity","🗳️ Community Poll","🏆 Explorer Badge"]
+},
+
+{
+name:"Adopt Me!",
+platform:"Roblox",
+icon:"🐶",
+category:"Pets",
+description:"Explore a world of pets and collecting.",
+features:["🐾 Pet Trivia","🎲 Random Pet","🏆 Collection Challenge","🎯 Daily Goal"]
+},
+
+{
+name:"RIVALS",
+platform:"Roblox",
+icon:"🏆",
+category:"Action",
+description:"Jump into fast competitive experiences.",
+features:["🎯 Daily Challenge","🏆 Skill Challenge","📊 Personal Stats","🔥 Trending"]
+},
+
+{
+name:"Dress to Impress",
+platform:"Roblox",
+icon:"👗",
+category:"Fashion",
+description:"Create outfits and compete in fashion themes.",
+features:["👗 Theme Challenge","🎲 Random Theme","🗳️ Outfit Poll","🏆 Fashion Badge"]
+},
+
+{
+name:"99 Nights in the Forest",
+platform:"Roblox",
+icon:"🌲",
+category:"Adventure",
+description:"Explore a mysterious forest adventure.",
+features:["🌲 Survival Challenge","🎲 Random Goal","🏆 Explorer Badge","🧠 Trivia"]
+},
+
+{
+name:"Murder Mystery 2",
+platform:"Roblox",
+icon:"🔎",
+category:"Mystery",
+description:"Solve mysteries and test your detective skills.",
+features:["🔎 Detective Challenge","🧠 Mystery Trivia","🎲 Random Role","🏆 Mystery Badge"]
+},
+
+{
+name:"Blox Fruits",
+platform:"Roblox",
+icon:"🏝️",
+category:"Adventure",
+description:"Explore islands and build your adventure.",
+features:["🏝️ Island Challenge","🎲 Random Goal","🏆 Explorer Badge","🧠 Trivia"]
+},
+
+{
+name:"Tower of Hell",
+platform:"Roblox",
+icon:"🧗",
+category:"Obby",
+description:"Take on challenging obstacle courses.",
+features:["🧗 Obby Challenge","⏱️ Time Challenge","🏆 Speed Badge","🎲 Random Goal"]
+},
+
+{
+name:"MeepCity",
+platform:"Roblox",
+icon:"🏙️",
+category:"Social",
+description:"Hang out and explore a social world.",
+features:["🏙️ City Challenge","🎲 Random Activity","🗳️ Polls","🏆 Explorer Badge"]
+},
+
+{
+name:"Piggy",
+platform:"Roblox",
+icon:"🐷",
+category:"Adventure",
+description:"Solve puzzles and escape dangerous situations.",
+features:["🧩 Puzzle Challenge","🧠 Trivia","🎲 Random Goal","🏆 Explorer Badge"]
+},
+
+{
+name:"Mimic",
+platform:"Roblox",
+icon:"👻",
+category:"Adventure",
+description:"Explore mysterious chapters and puzzles.",
+features:["🧩 Puzzle Challenge","👻 Trivia","🏆 Explorer Badge","🎯 Daily Goal"]
+},
+
+{
+name:"Doors",
+platform:"Roblox",
+icon:"🚪",
+category:"Adventure",
+description:"Explore rooms and discover what lies ahead.",
+features:["🚪 Explorer Challenge","🧠 Trivia","🎲 Random Goal","🏆 Door Badge"]
+},
+
+{
+name:"Pet Simulator",
+platform:"Roblox",
+icon:"🐾",
+category:"Simulator",
+description:"Collect pets and explore a colorful world.",
+features:["🐾 Pet Challenge","🎲 Random Pet","🏆 Collection Goal","⭐ Daily Goal"]
+},
+
+{
+name:"Jailbreak",
+platform:"Roblox",
+icon:"🚓",
+category:"Adventure",
+description:"Explore a large open-world experience.",
+features:["🗺️ Explorer Challenge","🎲 Random Activity","🏆 Explorer Badge","🧠 Trivia"]
+},
+
+{
+name:"Arsenal",
+platform:"Roblox",
+icon:"🏆",
+category:"Action",
+description:"Take on fast-paced competitive matches.",
+features:["🎯 Skill Challenge","🏆 Achievement Goal","📊 Stats","🔥 Trending"]
+},
+
+{
+name:"Natural Disaster Survival",
+platform:"Roblox",
+icon:"🌪️",
+category:"Survival",
+description:"Try to survive changing disasters.",
+features:["🌪️ Survival Challenge","🎲 Random Disaster","🏆 Survivor Badge","🧠 Trivia"]
+},
+
+{
+name:"Work at a Pizza Place",
+platform:"Roblox",
+icon:"🍕",
+category:"Roleplay",
+description:"Work together and build your pizza business.",
+features:["🍕 Job Challenge","🎲 Random Job","🏆 Worker Badge","🗳️ Poll"]
+},
+
+{
+name:"Evade",
+platform:"Roblox",
+icon:"🏃",
+category:"Survival",
+description:"Run, explore and complete survival objectives.",
+features:["🏃 Challenge","🎲 Random Goal","🏆 Explorer Badge","📊 Stats"]
+},
+
+
+{
+name:"Fortnite Battle Royale",
+platform:"Fortnite",
+icon:"🏝️",
+category:"Battle Royale",
+description:"Explore Fortnite's main Battle Royale experience.",
+features:["🏆 Daily Goal","🗺️ Map Trivia","🎲 Random Challenge","🔥 Trending"]
+},
+
+{
+name:"Fortnite Reload",
+platform:"Fortnite",
+icon:"🔄",
+category:"Reload",
+description:"Jump into the fast-paced Reload experience.",
+features:["🔄 Reload Challenge","🎯 Daily Goal","🏆 Achievement","🧠 Trivia"]
+},
+
+{
+name:"Blitz Royale",
+platform:"Fortnite",
+icon:"⚡",
+category:"Battle Royale",
+description:"A faster Fortnite experience.",
+features:["⚡ Speed Challenge","🎲 Random Goal","🏆 Achievement","🔥 Trending"]
+},
+
+{
+name:"Fortnite OG",
+platform:"Fortnite",
+icon:"🕹️",
+category:"Battle Royale",
+description:"Explore Fortnite's classic-style experience.",
+features:["🕹️ OG Trivia","🏆 Challenge","🎲 Random Goal","🔥 Trending"]
+},
+
+{
+name:"GO GOATED! Zone Wars",
+platform:"Fortnite",
+icon:"🐐",
+category:"Creative",
+description:"A popular Zone Wars creative experience.",
+features:["🐐 Challenge","🎯 Skill Goal","🏆 Achievement","🔥 Trending"]
+},
+
+{
+name:"BOX PVP",
+platform:"Fortnite",
+icon:"📦",
+category:"Creative",
+description:"A fast competitive Creative experience.",
+features:["📦 Challenge","🎯 Practice Goal","🏆 Achievement","📊 Stats"]
+},
+
+{
+name:"Piece Control",
+platform:"Fortnite",
+icon:"🎯",
+category:"Creative",
+description:"A popular Creative practice experience.",
+features:["🎯 Practice Challenge","🏆 Goal","🎲 Random Challenge","🔥 Trending"]
+},
+
+{
+name:"The Pit",
+platform:"Fortnite",
+icon:"🏟️",
+category:"Creative",
+description:"A popular free-for-all Creative experience.",
+features:["🏟️ Challenge","🎯 Skill Goal","🏆 Achievement","🔥 Trending"]
+},
+
+{
+name:"Red vs Blue",
+platform:"Fortnite",
+icon:"🔴",
+category:"Creative",
+description:"A classic Creative team experience.",
+features:["🔴 Team Challenge","🏆 Achievement","🎲 Random Goal","🔥 Trending"]
+},
+
+{
+name:"Deathrun",
+platform:"Fortnite",
+icon:"🏃",
+category:"Creative",
+description:"Take on obstacle courses and challenges.",
+features:["🏃 Speed Challenge","⏱️ Time Goal","🏆 Achievement","🎲 Random Level"]
+},
+
+{
+name:"Minigame Box PVP",
+platform:"Fortnite",
+icon:"🎮",
+category:"Creative",
+description:"A collection of different minigames.",
+features:["🎮 Random Minigame","🏆 Challenge","🎲 Randomizer","🔥 Trending"]
+},
+
+{
+name:"Beat the Brainrot",
+platform:"Fortnite",
+icon:"🧠",
+category:"Creative",
+description:"A Brainrot-themed Fortnite experience.",
+features:["🧠 Trivia","🎲 Random Brainrot","🏆 Challenge","🔥 Trending"]
 }
 
-};
+];
 
 
-let currentGame = "";
+let currentPlatform="Roblox";
+let currentGame=null;
 
-let selectedCategory = "All";
 
+function renderGames(){
 
-function filterGames() {
+const box=document.getElementById("games");
 
-const search =
-document.getElementById("search")
-.value
-.toLowerCase();
+let list=games.filter(g=>
+currentPlatform==="All" ||
+g.platform===currentPlatform
+);
 
-const cards =
-document.querySelectorAll(".card");
+box.innerHTML=list.map((g,i)=>`
 
-let found = 0;
+<div class="card" data-name="${g.name.toLowerCase()}">
 
-cards.forEach(card => {
+<div class="icon">${g.icon}</div>
 
-const name =
-card.dataset.name.toLowerCase();
+<h3>${g.name}</h3>
 
-const category =
-card.dataset.category;
+<p>${g.description}</p>
 
-const matchesSearch =
-name.includes(search);
+<div class="meta">
+<span>${g.platform}</span>
+<span>⭐ ${(4.4+(i%6)/10).toFixed(1)}</span>
+</div>
 
-const matchesCategory =
-selectedCategory === "All" ||
-category === selectedCategory;
+<div class="card-actions">
 
-if(matchesSearch && matchesCategory) {
+<button class="small"
+onclick="openGame('${g.name}')">
+Explore
+</button>
 
-card.style.display = "block";
+<button class="small"
+onclick="favorite('${g.name}')">
+❤️
+</button>
 
-found++;
+</div>
 
-} else {
+</div>
 
-card.style.display = "none";
-
-}
-
-});
-
-document.getElementById("empty")
-.style.display = found === 0 ? "block" : "none";
+`).join("");
 
 }
 
 
-function chooseCategory(category, button) {
+function filterPlatform(platform,button){
 
-selectedCategory = category;
+currentPlatform=platform;
 
-document
-.querySelectorAll(".category")
-.forEach(btn => {
-btn.classList.remove("active");
-});
+document.querySelectorAll(".category")
+.forEach(x=>x.classList.remove("active"));
 
 button.classList.add("active");
 
-filterGames();
+renderGames();
 
 }
 
 
-function randomGame() {
+function searchGames(){
 
-const names = Object.keys(games);
+let q=document.getElementById("search")
+.value.toLowerCase();
 
-const random =
-names[Math.floor(Math.random() * names.length)];
+document.querySelectorAll("#games .card")
+.forEach(card=>{
 
-openGame(random);
+card.style.display=
+card.dataset.name.includes(q)
+?"block":"none";
+
+});
 
 }
 
 
-function openGame(name) {
+function openGame(name){
 
-currentGame = name;
+currentGame=games.find(g=>g.name===name);
 
-const game = games[name];
-
-document.getElementById("modalTitle")
-.textContent = name;
+if(!currentGame)return;
 
 document.getElementById("modalIcon")
-.textContent = game.icon;
+.textContent=currentGame.icon;
+
+document.getElementById("modalTitle")
+.textContent=currentGame.name;
 
 document.getElementById("modalDescription")
-.textContent = game.description;
+.textContent=currentGame.description;
 
-document.getElementById("gameModal")
-.style.display = "block";
+document.getElementById("modalFeatures")
+.innerHTML=currentGame.features
+.map(x=>`<div class="activity">${x}</div>`)
+.join("");
 
-loadRating();
+document.getElementById("modal")
+.style.display="block";
 
-}
-
-
-function closeModal() {
-
-document.getElementById("gameModal")
-.style.display = "none";
+earnXP(2);
 
 }
 
 
-function favorite(name) {
+function closeModal(){
 
-let favorites =
-JSON.parse(localStorage.getItem("gamehubFavorites") || "[]");
+document.getElementById("modal")
+.style.display="none";
 
-if(!favorites.includes(name)) {
+}
 
-favorites.push(name);
 
-localStorage.setItem(
-"gamehubFavorites",
-JSON.stringify(favorites)
+function randomGame(){
+
+let game=games[Math.floor(Math.random()*games.length)];
+
+openGame(game.name);
+
+}
+
+
+function favorite(name){
+
+let list=JSON.parse(
+localStorage.getItem("favorites")||"[]"
 );
 
-alert("❤️ Added to Favorites!");
+if(!list.includes(name)){
 
-} else {
+list.push(name);
 
-alert("Already in your favorites!");
+localStorage.setItem(
+"favorites",
+JSON.stringify(list)
+);
+
+earnXP(5);
 
 }
 
@@ -820,38 +877,46 @@ showFavorites();
 }
 
 
-function favoriteCurrent() {
+function favoriteCurrent(){
 
-favorite(currentGame);
+if(currentGame)
+favorite(currentGame.name);
 
 }
 
 
-function showFavorites() {
+function showFavorites(){
 
-const box =
-document.getElementById("favorites");
+let list=JSON.parse(
+localStorage.getItem("favorites")||"[]"
+);
 
-let favorites =
-JSON.parse(localStorage.getItem("gamehubFavorites") || "[]");
+document.getElementById("favoritesCount")
+.textContent=list.length;
 
-if(favorites.length === 0) {
+let box=document.getElementById("favorites");
 
-box.innerHTML =
-'<p style="color:#8d96aa;">Your favorite games will appear here.</p>';
+if(!list.length){
+
+box.innerHTML=
+'<div class="empty">❤️ Favorite games will appear here.</div>';
 
 return;
 
 }
 
-box.innerHTML = favorites.map(name => {
+box.innerHTML=list.map(name=>{
+
+let g=games.find(x=>x.name===name);
 
 return `
-<div class="card" style="margin-bottom:12px;">
-<h3>${games[name].icon} ${name}</h3>
-<button class="small-button"
-onclick="openGame('${name}')">
-View Game
+<div class="card">
+<div class="icon">${g.icon}</div>
+<h3>${g.name}</h3>
+<p>${g.platform}</p>
+<button class="small"
+onclick="openGame('${g.name}')">
+Explore
 </button>
 </div>
 `;
@@ -861,71 +926,121 @@ View Game
 }
 
 
-function rate(number) {
+function earnXP(amount){
 
-if(!currentGame) return;
-
-localStorage.setItem(
-"rating_" + currentGame,
-number
+let xp=parseInt(
+localStorage.getItem("xp")||"0"
 );
 
-loadRating();
+xp+=amount;
+
+localStorage.setItem("xp",xp);
+
+updateProgress();
 
 }
 
 
-function loadRating() {
+function updateProgress(){
 
-let rating =
-localStorage.getItem("rating_" + currentGame);
+let xp=parseInt(
+localStorage.getItem("xp")||"0"
+);
 
-if(!rating) {
+let level=Math.floor(xp/100)+1;
 
-rating = 0;
+let within=xp%100;
 
-}
+document.getElementById("xp")
+.textContent=xp;
 
-document
-.querySelectorAll(".star")
-.forEach((star,index) => {
+document.getElementById("level")
+.textContent=level;
 
-if(index < rating) {
+document.getElementById("xpBar")
+.style.width=within+"%";
 
-star.classList.add("selected");
-
-} else {
-
-star.classList.remove("selected");
-
-}
-
-});
-
-document.getElementById("ratingText")
-.textContent =
-rating
-? "Your rating: " + rating + "/5 ⭐"
-: "Rate this game";
+document.getElementById("xpText")
+.textContent=within+" / 100 XP";
 
 }
 
 
-window.onclick = function(event) {
+function dailyChallenge(){
 
-const modal =
-document.getElementById("gameModal");
+const challenges=[
 
-if(event.target === modal) {
+"🎯 Explore a game you've never opened before.",
+"🎲 Use Random Game and try its activity.",
+"❤️ Add a new game to your favorites.",
+"⭐ Rate a game you've played.",
+"🧠 Complete a game trivia activity.",
+"🏆 Explore three different games."
 
+];
+
+let challenge=
+challenges[Math.floor(Math.random()*challenges.length)];
+
+alert("🎯 DAILY CHALLENGE\n\n"+challenge+"\n\nComplete it and earn 25 XP!");
+
+earnXP(25);
+
+}
+
+
+function showAchievements(){
+
+alert(
+"🏆 ACHIEVEMENTS\n\n"+
+"🌱 First Steps — Open a game\n"+
+"⭐ Explorer — Explore 5 games\n"+
+"🔥 Streak Starter — Build a 3-day streak\n"+
+"❤️ Collector — Favorite a game\n"+
+"🎯 Challenge Accepted — Complete a challenge\n\n"+
+"More achievements coming!"
+);
+
+}
+
+
+function showPoll(){
+
+const polls=[
+
+"Which game should GameHub feature next?",
+"Which platform do you play most?",
+"What's more fun: challenges or randomizers?",
+"Which GameHub feature should come next?"
+
+];
+
+let poll=
+polls[Math.floor(Math.random()*polls.length)];
+
+alert(
+"🗳️ DAILY POLL\n\n"+
+poll+
+"\n\n👍 Option A\n👎 Option B\n\n"+
+"Thanks for voting! +10 XP"
+);
+
+earnXP(10);
+
+}
+
+
+window.onclick=function(e){
+
+if(e.target===document.getElementById("modal"))
 closeModal();
-
-}
 
 };
 
 
+renderGames();
 showFavorites();
+updateProgress();
 
 </script>
 
