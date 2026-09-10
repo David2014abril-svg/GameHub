@@ -1,213 +1,932 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>GameHub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      background: #080c18;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
+<title>GameHub</title>
 
-    header {
-      padding: 20px;
-      background: #11182a;
-      text-align: center;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    .logo {
-      font-size: 32px;
-      font-weight: bold;
-      color: #7657ff;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    .search {
-      margin-top: 15px;
-      padding: 14px;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 15px;
-      border: 2px solid #303950;
-      background: #171d30;
-      color: white;
-      font-size: 16px;
-    }
+body {
+  margin: 0;
+  background: #080b16;
+  color: white;
+  font-family: Arial, sans-serif;
+}
 
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 30px 20px;
-    }
+header {
+  background: #111629;
+  padding: 18px 20px;
+  border-bottom: 1px solid #252c45;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: #14192d;
-      border: 2px solid #293149;
-      border-radius: 30px;
-    }
+.header-inner {
+  max-width: 1150px;
+  margin: auto;
+}
 
-    .hero h1 {
-      font-size: 45px;
-    }
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: #8b6cff;
+  margin-bottom: 15px;
+}
 
-    .hero span {
-      color: #7657ff;
-    }
+.search {
+  width: 100%;
+  padding: 14px 17px;
+  border-radius: 14px;
+  border: 1px solid #343c58;
+  background: #191f34;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
 
-    .hero p {
-      color: #aeb6ca;
-      font-size: 18px;
-    }
+.search:focus {
+  border-color: #8b6cff;
+}
 
-    .button {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 15px 25px;
-      background: #7657ff;
-      color: white;
-      text-decoration: none;
-      border-radius: 15px;
-      font-weight: bold;
-    }
+main {
+  max-width: 1150px;
+  margin: auto;
+  padding: 25px 18px;
+}
 
-    h2 {
-      margin-top: 50px;
-      font-size: 32px;
-    }
+.hero {
+  text-align: center;
+  padding: 55px 20px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #171b35, #101525);
+  border: 1px solid #303754;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-    }
+.hero h1 {
+  font-size: clamp(35px, 8vw, 60px);
+  margin: 0 0 15px;
+}
 
-    .card {
-      padding: 20px;
-      background: #141a2b;
-      border: 2px solid #293149;
-      border-radius: 22px;
-    }
+.hero h1 span {
+  color: #8b6cff;
+}
 
-    .icon {
-      height: 130px;
-      background: #20283e;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 60px;
-    }
+.hero p {
+  color: #aeb6ca;
+  font-size: 18px;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.5;
+}
 
-    .card h3 {
-      font-size: 23px;
-    }
+.buttons {
+  margin-top: 25px;
+}
 
-    .card p {
-      color: #aeb6ca;
-    }
+.button {
+  display: inline-block;
+  border: none;
+  padding: 13px 20px;
+  margin: 5px;
+  border-radius: 13px;
+  background: #8b6cff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
 
-    footer {
-      text-align: center;
-      padding: 40px;
-      color: #7f879b;
-    }
-  </style>
+.button:hover {
+  opacity: .85;
+}
+
+.button.secondary {
+  background: #252c45;
+}
+
+h2 {
+  margin-top: 45px;
+  font-size: 28px;
+}
+
+.categories {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.category {
+  flex-shrink: 0;
+  padding: 10px 16px;
+  border: 1px solid #303852;
+  border-radius: 30px;
+  background: #151b2e;
+  color: white;
+  cursor: pointer;
+}
+
+.category.active,
+.category:hover {
+  background: #8b6cff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #141a2b;
+  border: 1px solid #293149;
+  border-radius: 20px;
+  padding: 16px;
+  transition: .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #8b6cff;
+}
+
+.icon {
+  height: 140px;
+  border-radius: 15px;
+  background: #20283e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 65px;
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+.card p {
+  color: #aeb6ca;
+  min-height: 42px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  color: #aeb6ca;
+  font-size: 14px;
+  margin: 12px 0;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.small-button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #252d46;
+  color: white;
+  font-weight: bold;
+}
+
+.small-button:hover {
+  background: #8b6cff;
+}
+
+.empty {
+  display: none;
+  text-align: center;
+  padding: 35px;
+  color: #929bb0;
+}
+
+footer {
+  text-align: center;
+  padding: 45px 20px;
+  color: #6f7890;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.75);
+  z-index: 100;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal-box {
+  max-width: 600px;
+  margin: 60px auto;
+  background: #151b2e;
+  border: 1px solid #343d5c;
+  border-radius: 24px;
+  padding: 25px;
+}
+
+.close {
+  float: right;
+  border: none;
+  background: #252c45;
+  color: white;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.big-icon {
+  height: 180px;
+  background: #20283e;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 85px;
+  margin-bottom: 20px;
+}
+
+.stars {
+  font-size: 28px;
+  margin: 15px 0;
+}
+
+.star {
+  cursor: pointer;
+  color: #555d73;
+}
+
+.star.selected {
+  color: #ffd34e;
+}
+
+.stat-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.stat {
+  background: #20283e;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-size: 20px;
+}
+
+@media(max-width:600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 40px 15px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">🎮 GameHub</div>
+  <div class="header-inner">
+    <div class="logo">🎮 GameHub</div>
 
-  <input
-    class="search"
-    id="search"
-    placeholder="Search games..."
-    oninput="searchGames()"
-  >
+    <input
+      class="search"
+      id="search"
+      type="text"
+      placeholder="🔎 Search games..."
+      oninput="filterGames()"
+    >
+  </div>
 </header>
 
 <main>
 
-  <section class="hero">
-    <h1>Welcome to <span>GameHub</span></h1>
+<section class="hero">
 
-    <p>
-      Discover games, find your next favorite,
-      and explore what's trending.
-    </p>
+  <h1>Welcome to <span>GameHub</span></h1>
 
-    <a class="button" href="#games">
-      Explore Games 🎮
-    </a>
-  </section>
+  <p>
+    Discover games, find new favorites,
+    explore categories, and see what's trending.
+  </p>
 
-  <h2 id="games">🔥 Popular Games</h2>
+  <div class="buttons">
+    <a class="button" href="#games">Explore Games 🎮</a>
 
-  <div class="grid">
-
-    <div class="card" data-name="Fortnite">
-      <div class="icon">🎯</div>
-      <h3>Fortnite</h3>
-      <p>Battle, build, and play with friends.</p>
-    </div>
-
-    <div class="card" data-name="Roblox">
-      <div class="icon">🧱</div>
-      <h3>Roblox</h3>
-      <p>Explore millions of player-created games.</p>
-    </div>
-
-    <div class="card" data-name="Minecraft">
-      <div class="icon">⛏️</div>
-      <h3>Minecraft</h3>
-      <p>Build, explore, and survive.</p>
-    </div>
-
-    <div class="card" data-name="Murder Mystery 2">
-      <div class="icon">🔎</div>
-      <h3>Murder Mystery 2</h3>
-      <p>Figure out who the killer is.</p>
-    </div>
-
-    <div class="card" data-name="Super Smash Bros">
-      <div class="icon">🥊</div>
-      <h3>Super Smash Bros.</h3>
-      <p>Battle with your favorite characters.</p>
-    </div>
-
-    <div class="card" data-name="Steal a Brainrot">
-      <div class="icon">🧠</div>
-      <h3>Steal a Brainrot</h3>
-      <p>Collect, trade, and defend your brainrots.</p>
-    </div>
-
+    <button class="button secondary" onclick="randomGame()">
+      🎲 Random Game
+    </button>
   </div>
+
+</section>
+
+
+<h2>🎯 Browse Categories</h2>
+
+<div class="categories">
+
+  <button class="category active" onclick="chooseCategory('All', this)">
+    All
+  </button>
+
+  <button class="category" onclick="chooseCategory('Battle', this)">
+    🔥 Battle
+  </button>
+
+  <button class="category" onclick="chooseCategory('Adventure', this)">
+    🗺️ Adventure
+  </button>
+
+  <button class="category" onclick="chooseCategory('Sandbox', this)">
+    🧱 Sandbox
+  </button>
+
+  <button class="category" onclick="chooseCategory('Fighting', this)">
+    🥊 Fighting
+  </button>
+
+</div>
+
+
+<h2 id="games">🔥 Trending Games</h2>
+
+<div class="grid" id="gameGrid">
+
+
+<div class="card"
+data-name="Fortnite"
+data-category="Battle">
+
+<div class="icon">🎯</div>
+
+<h3>Fortnite</h3>
+
+<p>Battle, build, explore, and play with friends.</p>
+
+<div class="info">
+<span>🔥 Trending</span>
+<span>⭐ 4.8</span>
+</div>
+
+<div class="card-buttons">
+
+<button class="small-button"
+onclick="openGame('Fortnite')">
+View Game
+</button>
+
+<button class="small-button"
+onclick="favorite('Fortnite')">
+♡ Favorite
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card"
+data-name="Roblox"
+data-category="Adventure">
+
+<div class="icon">🧱</div>
+
+<h3>Roblox</h3>
+
+<p>Explore millions of experiences made by players.</p>
+
+<div class="info">
+<span>🔥 Trending</span>
+<span>⭐ 4.7</span>
+</div>
+
+<div class="card-buttons">
+
+<button class="small-button"
+onclick="openGame('Roblox')">
+View Game
+</button>
+
+<button class="small-button"
+onclick="favorite('Roblox')">
+♡ Favorite
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card"
+data-name="Minecraft"
+data-category="Sandbox">
+
+<div class="icon">⛏️</div>
+
+<h3>Minecraft</h3>
+
+<p>Build, explore, survive, and create anything.</p>
+
+<div class="info">
+<span>⭐ Popular</span>
+<span>⭐ 4.9</span>
+</div>
+
+<div class="card-buttons">
+
+<button class="small-button"
+onclick="openGame('Minecraft')">
+View Game
+</button>
+
+<button class="small-button"
+onclick="favorite('Minecraft')">
+♡ Favorite
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card"
+data-name="Murder Mystery 2"
+data-category="Adventure">
+
+<div class="icon">🔎</div>
+
+<h3>Murder Mystery 2</h3>
+
+<p>Use clues and teamwork to figure out what's happening.</p>
+
+<div class="info">
+<span>🔥 Trending</span>
+<span>⭐ 4.6</span>
+</div>
+
+<div class="card-buttons">
+
+<button class="small-button"
+onclick="openGame('Murder Mystery 2')">
+View Game
+</button>
+
+<button class="small-button"
+onclick="favorite('Murder Mystery 2')">
+♡ Favorite
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card"
+data-name="Super Smash Bros"
+data-category="Fighting">
+
+<div class="icon">🥊</div>
+
+<h3>Super Smash Bros.</h3>
+
+<p>Battle with a huge variety of characters.</p>
+
+<div class="info">
+<span>⭐ Popular</span>
+<span>⭐ 4.7</span>
+</div>
+
+<div class="card-buttons">
+
+<button class="small-button"
+onclick="openGame('Super Smash Bros')">
+View Game
+</button>
+
+<button class="small-button"
+onclick="favorite('Super Smash Bros')">
+♡ Favorite
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card"
+data-name="Steal a Brainrot"
+data-category="Adventure">
+
+<div class="icon">🧠</div>
+
+<h3>Steal a Brainrot</h3>
+
+<p>Collect, trade, and protect your brainrots.</p>
+
+<div class="info">
+<span>🔥 Trending</span>
+<span>⭐ 4.5</span>
+</div>
+
+<div class="card-buttons">
+
+<button class="small-button"
+onclick="openGame('Steal a Brainrot')">
+View Game
+</button>
+
+<button class="small-button"
+onclick="favorite('Steal a Brainrot')">
+♡ Favorite
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="empty" id="empty">
+😕 No games found.
+</div>
+
+
+<h2>❤️ My Favorites</h2>
+
+<div id="favorites">
+<p style="color:#8d96aa;">
+Your favorite games will appear here.
+</p>
+</div>
 
 </main>
 
+
 <footer>
-  © 2026 GameHub • Made for gamers
+© 2026 GameHub • Made for gamers 🎮
 </footer>
 
+
+<!-- GAME POPUP -->
+
+<div class="modal" id="gameModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal()">✕</button>
+
+<div class="big-icon" id="modalIcon">🎮</div>
+
+<h1 id="modalTitle">Game</h1>
+
+<p id="modalDescription"></p>
+
+<div class="stars" id="stars">
+<span class="star" onclick="rate(1)">★</span>
+<span class="star" onclick="rate(2)">★</span>
+<span class="star" onclick="rate(3)">★</span>
+<span class="star" onclick="rate(4)">★</span>
+<span class="star" onclick="rate(5)">★</span>
+</div>
+
+<p id="ratingText">Rate this game</p>
+
+<div class="stat-box">
+
+<div class="stat">
+<strong id="modalRating">4.5</strong>
+Rating
+</div>
+
+<div class="stat">
+<strong>🔥</strong>
+Trending
+</div>
+
+<div class="stat">
+<strong>🎮</strong>
+Game
+</div>
+
+</div>
+
+<br>
+
+<button class="button"
+onclick="favoriteCurrent()">
+❤️ Add to Favorites
+</button>
+
+</div>
+</div>
+
+
 <script>
-function searchGames() {
-  let search = document.getElementById("search").value.toLowerCase();
 
-  document.querySelectorAll(".card").forEach(function(card) {
-    let name = card.dataset.name.toLowerCase();
+const games = {
 
-    if (name.includes(search)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
+"Fortnite": {
+icon:"🎯",
+description:"A fast-paced battle game where players can battle, build, explore, and play together."
+},
+
+"Roblox": {
+icon:"🧱",
+description:"A huge gaming platform filled with experiences created by players."
+},
+
+"Minecraft": {
+icon:"⛏️",
+description:"Build, explore, survive, and create your own worlds."
+},
+
+"Murder Mystery 2": {
+icon:"🔎",
+description:"A multiplayer mystery experience where players try to figure out what's going on."
+},
+
+"Super Smash Bros": {
+icon:"🥊",
+description:"A fighting game featuring a large collection of characters."
+},
+
+"Steal a Brainrot": {
+icon:"🧠",
+description:"Collect and protect brainrots while competing with other players."
 }
+
+};
+
+
+let currentGame = "";
+
+let selectedCategory = "All";
+
+
+function filterGames() {
+
+const search =
+document.getElementById("search")
+.value
+.toLowerCase();
+
+const cards =
+document.querySelectorAll(".card");
+
+let found = 0;
+
+cards.forEach(card => {
+
+const name =
+card.dataset.name.toLowerCase();
+
+const category =
+card.dataset.category;
+
+const matchesSearch =
+name.includes(search);
+
+const matchesCategory =
+selectedCategory === "All" ||
+category === selectedCategory;
+
+if(matchesSearch && matchesCategory) {
+
+card.style.display = "block";
+
+found++;
+
+} else {
+
+card.style.display = "none";
+
+}
+
+});
+
+document.getElementById("empty")
+.style.display = found === 0 ? "block" : "none";
+
+}
+
+
+function chooseCategory(category, button) {
+
+selectedCategory = category;
+
+document
+.querySelectorAll(".category")
+.forEach(btn => {
+btn.classList.remove("active");
+});
+
+button.classList.add("active");
+
+filterGames();
+
+}
+
+
+function randomGame() {
+
+const names = Object.keys(games);
+
+const random =
+names[Math.floor(Math.random() * names.length)];
+
+openGame(random);
+
+}
+
+
+function openGame(name) {
+
+currentGame = name;
+
+const game = games[name];
+
+document.getElementById("modalTitle")
+.textContent = name;
+
+document.getElementById("modalIcon")
+.textContent = game.icon;
+
+document.getElementById("modalDescription")
+.textContent = game.description;
+
+document.getElementById("gameModal")
+.style.display = "block";
+
+loadRating();
+
+}
+
+
+function closeModal() {
+
+document.getElementById("gameModal")
+.style.display = "none";
+
+}
+
+
+function favorite(name) {
+
+let favorites =
+JSON.parse(localStorage.getItem("gamehubFavorites") || "[]");
+
+if(!favorites.includes(name)) {
+
+favorites.push(name);
+
+localStorage.setItem(
+"gamehubFavorites",
+JSON.stringify(favorites)
+);
+
+alert("❤️ Added to Favorites!");
+
+} else {
+
+alert("Already in your favorites!");
+
+}
+
+showFavorites();
+
+}
+
+
+function favoriteCurrent() {
+
+favorite(currentGame);
+
+}
+
+
+function showFavorites() {
+
+const box =
+document.getElementById("favorites");
+
+let favorites =
+JSON.parse(localStorage.getItem("gamehubFavorites") || "[]");
+
+if(favorites.length === 0) {
+
+box.innerHTML =
+'<p style="color:#8d96aa;">Your favorite games will appear here.</p>';
+
+return;
+
+}
+
+box.innerHTML = favorites.map(name => {
+
+return `
+<div class="card" style="margin-bottom:12px;">
+<h3>${games[name].icon} ${name}</h3>
+<button class="small-button"
+onclick="openGame('${name}')">
+View Game
+</button>
+</div>
+`;
+
+}).join("");
+
+}
+
+
+function rate(number) {
+
+if(!currentGame) return;
+
+localStorage.setItem(
+"rating_" + currentGame,
+number
+);
+
+loadRating();
+
+}
+
+
+function loadRating() {
+
+let rating =
+localStorage.getItem("rating_" + currentGame);
+
+if(!rating) {
+
+rating = 0;
+
+}
+
+document
+.querySelectorAll(".star")
+.forEach((star,index) => {
+
+if(index < rating) {
+
+star.classList.add("selected");
+
+} else {
+
+star.classList.remove("selected");
+
+}
+
+});
+
+document.getElementById("ratingText")
+.textContent =
+rating
+? "Your rating: " + rating + "/5 ⭐"
+: "Rate this game";
+
+}
+
+
+window.onclick = function(event) {
+
+const modal =
+document.getElementById("gameModal");
+
+if(event.target === modal) {
+
+closeModal();
+
+}
+
+};
+
+
+showFavorites();
+
 </script>
 
 </body>
