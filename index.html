@@ -3,9 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="Game Zone - Discover games, complete daily challenges, rank items, earn XP and level up.">
-<meta name="keywords" content="gaming, Roblox, Fortnite, Game Zone, daily challenges, tier lists">
+<meta name="theme-color" content="#11152b">
 
 <title>Game Zone 🎮</title>
 
@@ -16,35 +14,25 @@
   padding:0;
 }
 
-:root{
-  --bg:#070914;
-  --panel:#10152b;
-  --panel2:#171d38;
-  --border:#2b3560;
-  --purple:#8b5cf6;
-  --blue:#3b82f6;
-  --text:#ffffff;
-  --muted:#aeb6d1;
-  --green:#4ade80;
-  --yellow:#facc15;
-}
-
 html{
   scroll-behavior:smooth;
 }
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:
-    radial-gradient(circle at 15% 10%,rgba(88,60,180,.25),transparent 30%),
-    radial-gradient(circle at 85% 20%,rgba(30,100,220,.18),transparent 28%),
-    linear-gradient(135deg,#070914,#0c1024 50%,#080b19);
-  color:var(--text);
+  color:#fff;
   min-height:100vh;
+  background:
+    radial-gradient(circle at 15% 10%,rgba(120,70,255,.28),transparent 30%),
+    radial-gradient(circle at 85% 20%,rgba(30,120,255,.22),transparent 30%),
+    linear-gradient(135deg,#070914,#111832 55%,#070914);
+}
+
+button,input{
+  font:inherit;
 }
 
 button{
-  font:inherit;
   cursor:pointer;
 }
 
@@ -52,85 +40,84 @@ header{
   position:sticky;
   top:0;
   z-index:100;
-  background:rgba(10,13,30,.94);
+  background:rgba(7,10,24,.96);
   backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--border);
+  border-bottom:1px solid #30385d;
   padding:12px;
 }
 
-.header-inner{
+.header{
   max-width:1250px;
   margin:auto;
+}
+
+.top{
   display:flex;
   align-items:center;
-  gap:14px;
-  flex-wrap:wrap;
+  gap:12px;
 }
 
 .logo{
   display:flex;
   align-items:center;
-  gap:9px;
-  min-width:max-content;
+  gap:10px;
+  white-space:nowrap;
 }
 
-.logo-icon{
-  width:45px;
-  height:45px;
-  border-radius:13px;
+.logoIcon{
+  width:48px;
+  height:48px;
+  border-radius:14px;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
+  font-size:26px;
   background:linear-gradient(135deg,#8b5cf6,#3b82f6);
-  box-shadow:0 0 22px rgba(139,92,246,.35);
-  font-size:25px;
+  box-shadow:0 0 25px rgba(100,80,240,.3);
 }
 
-.logo-text{
+.logoText{
   font-size:24px;
   font-weight:900;
-  letter-spacing:-1px;
 }
 
-.logo-text span{
-  color:#9b7cff;
+.logoText span{
+  color:#9d7cff;
 }
 
 .search{
   flex:1;
-  min-width:210px;
+  min-width:160px;
   padding:12px 15px;
-  border-radius:13px;
-  border:1px solid var(--border);
-  background:#080b18;
+  border-radius:12px;
+  border:1px solid #343e66;
+  background:#090c1b;
   color:white;
   outline:none;
 }
 
 .search:focus{
-  border-color:var(--purple);
+  border-color:#8b5cf6;
 }
 
 .nav{
   display:flex;
   gap:7px;
   overflow-x:auto;
-  width:100%;
+  padding-top:10px;
 }
 
 .nav button{
-  border:1px solid #293252;
+  border:1px solid #30395e;
   background:#151a31;
-  color:#dce1f2;
+  color:#fff;
   padding:10px 13px;
   border-radius:10px;
   white-space:nowrap;
 }
 
-.nav button:hover,
-.nav button.active{
-  background:linear-gradient(135deg,#7147d9,#4c67d9);
-  color:white;
+.nav button:hover{
+  background:#7044d5;
 }
 
 main{
@@ -148,26 +135,13 @@ main{
 }
 
 .hero{
-  position:relative;
-  overflow:hidden;
-  padding:34px;
+  padding:35px;
   border-radius:25px;
-  background:
-    radial-gradient(circle at 90% 20%,rgba(82,112,255,.25),transparent 25%),
-    linear-gradient(135deg,#21154b,#101a3a 55%,#10152b);
-  border:1px solid #3b4470;
   margin-bottom:25px;
-  box-shadow:0 20px 60px rgba(0,0,0,.2);
-}
-
-.hero:after{
-  content:"🎮";
-  position:absolute;
-  right:35px;
-  bottom:-25px;
-  font-size:130px;
-  opacity:.08;
-  transform:rotate(-12deg);
+  border:1px solid #414b78;
+  background:
+    radial-gradient(circle at 90% 10%,rgba(70,120,255,.3),transparent 28%),
+    linear-gradient(135deg,#281652,#131c40,#10152b);
 }
 
 .hero h1{
@@ -178,43 +152,38 @@ main{
 .hero p{
   color:#cbd2e8;
   max-width:750px;
-  line-height:1.55;
+  line-height:1.5;
 }
 
-.level-box{
-  margin-top:22px;
-  background:rgba(5,7,17,.65);
-  padding:17px;
-  border-radius:16px;
-  border:1px solid #293252;
+.levelBox{
   max-width:600px;
+  margin-top:22px;
+  padding:17px;
+  border-radius:15px;
+  background:rgba(4,7,17,.72);
+  border:1px solid #30395d;
 }
 
-.xp-bar{
+.xpBar{
   height:13px;
-  background:#252c49;
-  border-radius:20px;
-  overflow:hidden;
   margin-top:10px;
+  overflow:hidden;
+  border-radius:20px;
+  background:#252d4b;
 }
 
-.xp-fill{
-  height:100%;
+.xpFill{
   width:0%;
+  height:100%;
   background:linear-gradient(90deg,#8b5cf6,#4f8cff);
   transition:.3s;
 }
 
-.section-title{
+.sectionTitle{
   display:flex;
   justify-content:space-between;
   align-items:center;
   margin:30px 0 15px;
-  gap:10px;
-}
-
-.section-title h2{
-  font-size:25px;
 }
 
 .grid{
@@ -224,70 +193,72 @@ main{
 }
 
 .card{
-  background:rgba(16,21,43,.94);
-  border:1px solid #293252;
-  border-radius:18px;
   padding:18px;
+  border-radius:18px;
+  background:rgba(16,21,43,.96);
+  border:1px solid #293252;
   transition:.2s;
 }
 
 .card:hover{
   transform:translateY(-3px);
-  border-color:#7256d8;
-  box-shadow:0 10px 30px rgba(0,0,0,.15);
+  border-color:#7658df;
 }
 
 .card h3{
-  margin:7px 0 8px;
+  margin:8px 0;
 }
 
 .card p{
-  color:var(--muted);
+  color:#aeb6d1;
   line-height:1.45;
   font-size:14px;
 }
 
-.card button{
-  margin-top:13px;
-  width:100%;
-  border:0;
-  background:linear-gradient(135deg,#7044d5,#536de0);
-  color:white;
-  padding:11px;
-  border-radius:10px;
+.card small{
+  color:#8f99b8;
 }
 
-.game-icon{
-  width:55px;
-  height:55px;
-  border-radius:15px;
+.gameIcon{
+  width:58px;
+  height:58px;
   display:flex;
-  align-items:center;
   justify-content:center;
-  font-size:28px;
-  background:linear-gradient(135deg,#252c55,#151a34);
-  border:1px solid #38436b;
-  margin-bottom:10px;
+  align-items:center;
+  border-radius:15px;
+  background:linear-gradient(135deg,#252d55,#151a34);
+  border:1px solid #39446c;
+  font-size:29px;
 }
 
-.feature-grid{
+.card button,
+.action{
+  width:100%;
+  margin-top:13px;
+  padding:11px;
+  border:0;
+  border-radius:10px;
+  color:#fff;
+  background:linear-gradient(135deg,#7044d5,#536de0);
+}
+
+.featureGrid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(175px,1fr));
   gap:12px;
 }
 
 .feature{
-  background:rgba(16,21,43,.95);
-  border:1px solid #293252;
   padding:20px;
   border-radius:17px;
   text-align:left;
-  color:white;
+  color:#fff;
+  background:#10152b;
+  border:1px solid #293252;
 }
 
 .feature:hover{
-  background:#181d39;
-  border-color:#7256d8;
+  border-color:#7658df;
 }
 
 .feature .icon{
@@ -302,58 +273,92 @@ main{
 .feature p{
   color:#9fa8c4;
   font-size:13px;
-  line-height:1.4;
 }
 
 .platforms{
   display:flex;
-  gap:9px;
   flex-wrap:wrap;
-  margin:15px 0;
-}
-
-.platforms button,
-.filter-button{
-  border:1px solid #343e64;
-  background:#151a31;
-  color:white;
-  padding:10px 15px;
-  border-radius:10px;
-}
-
-.platforms button.active,
-.filter-button.active{
-  background:#7044d5;
-}
-
-.big-panel{
-  background:rgba(16,21,43,.95);
-  border:1px solid #293252;
-  border-radius:19px;
-  padding:22px;
+  gap:8px;
   margin-bottom:15px;
 }
 
-.big-panel p{
+.platforms button,
+.back,
+.reset,
+.filter{
+  padding:10px 15px;
+  border-radius:10px;
+  color:#fff;
+  background:#151a31;
+  border:1px solid #343e64;
+}
+
+.platforms button.active,
+.filter.active{
+  background:#7044d5;
+}
+
+.bigPanel{
+  padding:22px;
+  margin-bottom:15px;
+  border-radius:19px;
+  background:#10152b;
+  border:1px solid #293252;
+}
+
+.bigPanel p{
   color:#adb5d0;
   line-height:1.5;
 }
 
 .back{
-  border:1px solid #343e64;
-  background:#151a31;
-  color:white;
-  padding:10px 15px;
-  border-radius:10px;
   margin-bottom:18px;
 }
 
-.action{
-  border:0;
-  background:linear-gradient(135deg,#7044d5,#536de0);
-  color:white;
-  padding:10px 14px;
-  border-radius:9px;
+.notice{
+  padding:12px;
+  border-radius:10px;
+  color:#aeb7d2;
+  background:#171d37;
+  font-size:13px;
+  line-height:1.45;
+}
+
+.statGrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:12px;
+}
+
+.stat{
+  padding:18px;
+  border-radius:15px;
+  background:#181d36;
+  border:1px solid #293252;
+}
+
+.stat strong{
+  display:block;
+  margin-bottom:5px;
+  color:#a987ff;
+  font-size:28px;
+}
+
+.nameInput{
+  width:100%;
+  margin:8px 0;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #38436a;
+  background:#080b18;
+  color:#fff;
+  outline:none;
+}
+
+.profileName{
+  margin:10px 0;
+  font-size:30px;
+  font-weight:900;
 }
 
 .challenge{
@@ -361,125 +366,35 @@ main{
 }
 
 .completed{
-  opacity:.6;
+  opacity:.55;
 }
 
 .completed .status{
-  color:var(--green);
+  color:#4ade80;
 }
 
-.stat-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:12px;
-}
-
-.stat{
-  background:#181d36;
-  border:1px solid #293252;
-  border-radius:15px;
-  padding:18px;
-}
-
-.stat strong{
-  display:block;
-  font-size:28px;
-  color:#a987ff;
-  margin-bottom:5px;
-}
-
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.78);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:500;
-  padding:15px;
-}
-
-.modal-box{
-  background:#10152b;
-  border:1px solid #46527d;
-  border-radius:20px;
-  max-width:700px;
-  width:100%;
-  padding:25px;
-  max-height:88vh;
-  overflow:auto;
-}
-
-.close{
-  float:right;
-  border:0;
-  background:#292f4b;
-  color:white;
-  border-radius:8px;
-  padding:7px 10px;
-}
-
-.daily-badge{
+.badge{
   display:inline-block;
   padding:7px 10px;
   border-radius:9px;
-  background:#27204c;
   color:#c4adff;
+  background:#27204c;
   font-size:12px;
   font-weight:bold;
-  margin-top:8px;
-}
-
-.challenge-count{
-  color:#9fa8c4;
-  font-size:13px;
-}
-
-.profile-name{
-  font-size:30px;
-  font-weight:900;
-  margin:8px 0 15px;
-}
-
-.name-input{
-  width:100%;
-  padding:12px;
-  border-radius:10px;
-  border:1px solid #38436a;
-  background:#080b18;
-  color:white;
-  margin:8px 0;
-  outline:none;
-}
-
-.notice{
-  padding:12px;
-  border-radius:10px;
-  background:#171d37;
-  color:#aeb7d2;
-  font-size:13px;
-  line-height:1.4;
 }
 
 .empty{
-  text-align:center;
   padding:35px;
+  text-align:center;
   color:#8992ae;
   background:#10152b;
   border:1px solid #293252;
   border-radius:16px;
 }
 
+/* TIER LIST */
 
-/* =========================================
-   DRAG AND DROP TIER LIST
-========================================= */
-
-.tier-editor{
-  margin-top:20px;
-}
-
-.tier-row{
+.tierRow{
   display:grid;
   grid-template-columns:70px 1fr;
   min-height:95px;
@@ -489,7 +404,7 @@ main{
   overflow:hidden;
 }
 
-.tier-label{
+.tierLabel{
   display:flex;
   justify-content:center;
   align-items:center;
@@ -498,127 +413,174 @@ main{
   background:#222945;
 }
 
-.tier-dropzone{
+.tierZone{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
-  padding:12px;
   align-items:center;
   min-height:95px;
+  padding:12px;
   background:#141a31;
   transition:.2s;
 }
 
-.tier-dropzone.drag-over{
-  background:#27204b;
+.tierZone.dragOver{
+  background:#28204e;
   border:2px dashed #9b7cff;
 }
 
-.tier-item{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  padding:10px 12px;
+.tierItem{
+  padding:11px 13px;
+  border-radius:10px;
   background:#252d4d;
   border:1px solid #3b476e;
-  border-radius:10px;
-  font-size:13px;
+  color:#fff;
   cursor:grab;
   user-select:none;
+  touch-action:manipulation;
   transition:.15s;
 }
 
-.tier-item:hover{
+.tierItem:hover{
   border-color:#9b7cff;
-  transform:translateY(-2px);
 }
 
-.tier-item:active{
-  cursor:grabbing;
+.tierItem.selected{
+  border:2px solid white;
+  box-shadow:0 0 15px rgba(139,92,246,.6);
+  transform:scale(1.04);
 }
 
-.tier-item.dragging{
-  opacity:.4;
-}
-
-.item-pool{
+.pool{
   margin-top:20px;
   padding:18px;
+  border-radius:15px;
   background:#0d1225;
   border:1px solid #293252;
-  border-radius:15px;
 }
 
-.item-pool h3{
-  margin-bottom:12px;
-}
-
-.pool-items{
+.poolItems{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
-  min-height:55px;
-}
-
-.pool-dropzone{
   min-height:70px;
   padding:10px;
+  margin-top:12px;
   border:2px dashed #343e64;
   border-radius:12px;
 }
 
-.pool-dropzone.drag-over{
-  border-color:#9b7cff;
-  background:#171533;
+.mobileRank{
+  display:none;
+  padding:15px;
+  margin-bottom:15px;
+  border-radius:15px;
+  background:#181d39;
+  border:1px solid #4b5681;
 }
 
-.tier-help{
-  margin-top:15px;
+.mobileRank.show{
+  display:block;
+}
+
+.mobileButtons{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:7px;
+  margin-top:12px;
+}
+
+.mobileButtons button{
+  padding:12px 5px;
+  border:1px solid #3a456d;
+  border-radius:9px;
+  background:#11162c;
+  color:#fff;
+  font-weight:bold;
+}
+
+.help{
+  margin-top:10px;
   color:#9fa8c4;
   font-size:13px;
 }
 
-.reset-button{
-  border:1px solid #343e64;
-  background:#151a31;
-  color:white;
-  padding:10px 14px;
-  border-radius:9px;
-  margin-top:15px;
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:500;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+  background:rgba(0,0,0,.78);
+}
+
+.modalBox{
+  width:100%;
+  max-width:700px;
+  max-height:88vh;
+  overflow:auto;
+  padding:25px;
+  border-radius:20px;
+  background:#10152b;
+  border:1px solid #46527d;
+}
+
+.close{
+  float:right;
+  padding:7px 10px;
+  border:0;
+  border-radius:8px;
+  color:#fff;
+  background:#292f4b;
 }
 
 footer{
-  text-align:center;
   padding:30px;
+  text-align:center;
   color:#777f9e;
   border-top:1px solid #202944;
 }
 
-@media(max-width:600px){
+@media(max-width:700px){
+
+  .top{
+    flex-wrap:wrap;
+  }
+
+  .logo{
+    width:100%;
+  }
+
+  .search{
+    width:100%;
+    flex-basis:100%;
+  }
+
+  .hero{
+    padding:24px;
+  }
 
   .hero h1{
     font-size:32px;
   }
 
-  .hero{
-    padding:23px;
-  }
-
-  .logo-text{
-    font-size:21px;
-  }
-
-  .logo-icon{
-    width:40px;
-    height:40px;
-  }
-
-  .tier-row{
+  .tierRow{
     grid-template-columns:55px 1fr;
   }
 
-  .tier-label{
+  .tierLabel{
     font-size:21px;
+  }
+
+  .tierItem{
+    padding:12px 13px;
+    font-size:13px;
+  }
+
+  .mobileRank{
+    display:block;
   }
 }
 </style>
@@ -627,458 +589,343 @@ footer{
 <body>
 
 <header>
+<div class="header">
 
-<div class="header-inner">
+  <div class="top">
 
-  <div class="logo">
-    <div class="logo-icon">🎮</div>
-
-    <div class="logo-text">
-      Game <span>Zone</span>
+    <div class="logo">
+      <div class="logoIcon">🎮</div>
+      <div class="logoText">Game <span>Zone</span></div>
     </div>
+
+    <input
+      id="search"
+      class="search"
+      placeholder="Search games, challenges, items..."
+      oninput="renderGames()"
+    >
+
   </div>
 
-  <input
-    id="search"
-    class="search"
-    placeholder="Search games, challenges, items..."
-    oninput="searchEverything()"
-  >
-
   <div class="nav">
-
-    <button onclick="showPage('home')">
-      🏠 Home
-    </button>
-
-    <button onclick="showPage('leaderboard')">
-      🏆 Leaderboard
-    </button>
-
-    <button onclick="showPage('tierlists')">
-      📊 Tier Lists
-    </button>
-
-    <button onclick="showPage('achievements')">
-      🏅 Achievements
-    </button>
-
-    <button onclick="showPage('stats')">
-      📈 Stats
-    </button>
-
-    <button onclick="showPage('profile')">
-      👤 Profile
-    </button>
-
+    <button onclick="showPage('home')">🏠 Home</button>
+    <button onclick="showPage('leaderboard')">🏆 Leaderboard</button>
+    <button onclick="showPage('tierlists')">📊 Tier Lists</button>
+    <button onclick="showPage('achievements')">🏅 Achievements</button>
+    <button onclick="showPage('stats')">📈 Stats</button>
+    <button onclick="showPage('profile')">👤 Profile</button>
   </div>
 
 </div>
-
 </header>
 
 
 <main>
 
-
-<!-- ================= HOME ================= -->
+<!-- HOME -->
 
 <section id="home" class="page active">
 
-<div class="hero">
+  <div class="hero">
 
-  <h1>
-    Welcome to Game Zone 🚀
-  </h1>
+    <h1>Welcome to Game Zone 🚀</h1>
 
-  <p>
-    Discover games, complete daily challenges,
-    earn XP, level up, rank items and build
-    your gaming profile.
-  </p>
+    <p>
+      Discover games, complete daily challenges,
+      earn XP, level up and make your own tier lists.
+    </p>
 
-  <div class="level-box">
+    <div class="levelBox">
 
-    <strong>
-      Level <span id="level">1</span>
-    </strong>
+      <strong>
+        Level <span id="level">1</span>
+      </strong>
 
-    <span>
       · <span id="xp">0</span> XP
-    </span>
 
-    <div class="xp-bar">
-      <div id="xpFill" class="xp-fill"></div>
+      <div class="xpBar">
+        <div id="xpFill" class="xpFill"></div>
+      </div>
+
+      <small id="xpText">
+        100 XP until next level
+      </small>
+
     </div>
-
-    <small id="xpText">
-      100 XP until next level
-    </small>
 
   </div>
 
-</div>
+
+  <div class="sectionTitle">
+    <h2>⚡ Game Zone</h2>
+  </div>
+
+  <div class="featureGrid">
+
+    <button class="feature" onclick="showPage('leaderboard')">
+      <div class="icon">🏆</div>
+      <h3>Leaderboard</h3>
+      <p>See the Game Zone level leaderboard.</p>
+    </button>
+
+    <button class="feature" onclick="showPage('tierlists')">
+      <div class="icon">📊</div>
+      <h3>Tier Lists</h3>
+      <p>Rank items from your favorite games.</p>
+    </button>
+
+    <button class="feature" onclick="showPage('achievements')">
+      <div class="icon">🏅</div>
+      <h3>Achievements</h3>
+      <p>Unlock achievements as you use Game Zone.</p>
+    </button>
+
+    <button class="feature" onclick="randomGame()">
+      <div class="icon">🎲</div>
+      <h3>Random Game</h3>
+      <p>Let Game Zone pick a game for you.</p>
+    </button>
+
+    <button class="feature" onclick="showPage('stats')">
+      <div class="icon">📈</div>
+      <h3>Your Stats</h3>
+      <p>Track your Game Zone progress.</p>
+    </button>
+
+    <button class="feature" onclick="showPage('profile')">
+      <div class="icon">👤</div>
+      <h3>Your Profile</h3>
+      <p>Customize your Game Zone profile.</p>
+    </button>
+
+  </div>
 
 
-<div class="section-title">
-  <h2>⚡ Game Zone</h2>
-</div>
+  <div class="sectionTitle">
+    <h2>🎮 Explore Games</h2>
+  </div>
 
+  <div class="platforms">
 
-<div class="feature-grid">
+    <button class="active" onclick="setPlatform('all',this)">
+      All
+    </button>
 
-<button class="feature"
-onclick="showPage('leaderboard')">
+    <button onclick="setPlatform('Roblox',this)">
+      Roblox
+    </button>
 
-  <div class="icon">🏆</div>
+    <button onclick="setPlatform('Fortnite',this)">
+      Fortnite
+    </button>
 
-  <h3>Leaderboard</h3>
+  </div>
 
-  <p>
-    See the Game Zone level leaderboard.
-  </p>
-
-</button>
-
-
-<button class="feature"
-onclick="showPage('tierlists')">
-
-  <div class="icon">📊</div>
-
-  <h3>Tier Lists</h3>
-
-  <p>
-    Rank weapons, pets, brainrots and more.
-  </p>
-
-</button>
-
-
-<button class="feature"
-onclick="showPage('achievements')">
-
-  <div class="icon">🏅</div>
-
-  <h3>Achievements</h3>
-
-  <p>
-    Unlock badges as you explore Game Zone.
-  </p>
-
-</button>
-
-
-<button class="feature"
-onclick="randomGame()">
-
-  <div class="icon">🎲</div>
-
-  <h3>Random Game</h3>
-
-  <p>
-    Let Game Zone pick something to play.
-  </p>
-
-</button>
-
-
-<button class="feature"
-onclick="showPage('stats')">
-
-  <div class="icon">📈</div>
-
-  <h3>Your Stats</h3>
-
-  <p>
-    Track your Game Zone progress.
-  </p>
-
-</button>
-
-
-<button class="feature"
-onclick="showPage('profile')">
-
-  <div class="icon">👤</div>
-
-  <h3>Your Profile</h3>
-
-  <p>
-    Customize your Game Zone profile.
-  </p>
-
-</button>
-
-</div>
-
-
-<div class="section-title">
-
-  <h2>🎮 Explore Games</h2>
-
-</div>
-
-
-<div class="platforms">
-
-<button class="active"
-onclick="setPlatform('all',this)">
-  All
-</button>
-
-<button onclick="setPlatform('Roblox',this)">
-  Roblox
-</button>
-
-<button onclick="setPlatform('Fortnite',this)">
-  Fortnite
-</button>
-
-</div>
-
-
-<div id="gameGrid" class="grid"></div>
+  <div id="gameGrid" class="grid"></div>
 
 </section>
 
 
-
-<!-- ================= LEADERBOARD ================= -->
+<!-- LEADERBOARD -->
 
 <section id="leaderboard" class="page">
 
-<button class="back"
-onclick="showPage('home')">
-  ← Back to Home
-</button>
+  <button class="back" onclick="showPage('home')">
+    ← Back to Home
+  </button>
 
-<div class="section-title">
+  <div class="sectionTitle">
+    <h2>🏆 Leaderboard</h2>
+  </div>
 
-  <h2>🏆 Leaderboard</h2>
+  <div class="bigPanel">
 
-</div>
+    <h3>🌎 Game Zone Leaderboard</h3>
 
-<div class="big-panel">
+    <br>
 
-  <h3>
-    🌎 Game Zone Level Leaderboard
-  </h3>
+    <p>
+      The online live leaderboard will be connected
+      to a database later. This version keeps your
+      progress saved on your device.
+    </p>
 
-  <br>
+  </div>
 
-  <p>
-    The shared live database leaderboard is
-    being saved for the next update.
-  </p>
-
-</div>
-
-<div id="leaderboardList"></div>
+  <div id="leaderboardList"></div>
 
 </section>
 
 
-
-<!-- ================= TIER LISTS ================= -->
+<!-- TIER LISTS -->
 
 <section id="tierlists" class="page">
 
-<button class="back"
-onclick="showPage('home')">
-  ← Back to Home
-</button>
+  <button class="back" onclick="showPage('home')">
+    ← Back to Home
+  </button>
 
-<div class="section-title">
+  <div class="sectionTitle">
+    <h2>📊 Tier Lists</h2>
+  </div>
 
-  <h2>📊 Tier Lists</h2>
+  <div class="bigPanel">
 
-</div>
+    <h3>🔥 Rank It Your Way</h3>
 
-<div class="big-panel">
+    <br>
 
-  <h3>
-    🔥 Make Your Own Rankings
-  </h3>
+    <p>
+      Choose a game category and rank the items
+      however YOU think they belong.
+    </p>
 
-  <br>
+    <p class="help">
+      📱 Phone/tablet: tap an item, then tap a tier.
+      <br>
+      💻 Computer: drag items into a tier.
+    </p>
 
-  <p>
-    Choose a game, then drag the items into
-    S, A, B, C or D tiers.
-  </p>
+  </div>
 
-  <p>
-    Your tier list automatically saves on your
-    device.
-  </p>
+  <div id="tierButtons" class="grid"></div>
 
-</div>
-
-
-<div id="tierListButtons" class="grid"></div>
-
-
-<div id="activeTierList"></div>
+  <div id="activeTierList"></div>
 
 </section>
 
 
-
-<!-- ================= ACHIEVEMENTS ================= -->
+<!-- ACHIEVEMENTS -->
 
 <section id="achievements" class="page">
 
-<button class="back"
-onclick="showPage('home')">
-  ← Back to Home
-</button>
+  <button class="back" onclick="showPage('home')">
+    ← Back to Home
+  </button>
 
-<div class="section-title">
+  <div class="sectionTitle">
+    <h2>🏅 Achievements</h2>
+  </div>
 
-  <h2>🏅 Achievements</h2>
-
-</div>
-
-<div id="achievementList" class="grid"></div>
+  <div id="achievementList" class="grid"></div>
 
 </section>
 
 
-
-<!-- ================= STATS ================= -->
+<!-- STATS -->
 
 <section id="stats" class="page">
 
-<button class="back"
-onclick="showPage('home')">
-  ← Back to Home
-</button>
+  <button class="back" onclick="showPage('home')">
+    ← Back to Home
+  </button>
 
-<div class="section-title">
+  <div class="sectionTitle">
+    <h2>📈 Your Stats</h2>
+  </div>
 
-  <h2>📈 Your Stats</h2>
+  <div class="statGrid">
 
-</div>
+    <div class="stat">
+      <strong id="statLevel">1</strong>
+      Level
+    </div>
 
-<div class="stat-grid">
+    <div class="stat">
+      <strong id="statXP">0</strong>
+      XP
+    </div>
 
-<div class="stat">
-  <strong id="statLevel">1</strong>
-  Level
-</div>
+    <div class="stat">
+      <strong id="statChallenges">0</strong>
+      Challenges
+    </div>
 
-<div class="stat">
-  <strong id="statXP">0</strong>
-  XP
-</div>
+    <div class="stat">
+      <strong id="statGames">0</strong>
+      Games Explored
+    </div>
 
-<div class="stat">
-  <strong id="statChallenges">0</strong>
-  Challenges
-</div>
+    <div class="stat">
+      <strong id="statAchievements">0</strong>
+      Achievements
+    </div>
 
-<div class="stat">
-  <strong id="statGames">0</strong>
-  Games explored
-</div>
+    <div class="stat">
+      <strong id="statTierLists">0</strong>
+      Tier Lists Used
+    </div>
 
-<div class="stat">
-  <strong id="statAchievements">0</strong>
-  Achievements
-</div>
-
-<div class="stat">
-  <strong id="statTierLists">0</strong>
-  Tier lists used
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-
-<!-- ================= PROFILE ================= -->
+<!-- PROFILE -->
 
 <section id="profile" class="page">
 
-<button class="back"
-onclick="showPage('home')">
-  ← Back to Home
-</button>
+  <button class="back" onclick="showPage('home')">
+    ← Back to Home
+  </button>
 
-<div class="big-panel">
+  <div class="bigPanel">
 
-<h2>
-  👤 Your Game Zone Profile
-</h2>
+    <h2>👤 Your Game Zone Profile</h2>
 
-<div class="profile-name"
-id="profileName">
-  Game Zone Player
-</div>
+    <div id="profileName" class="profileName">
+      Game Zone Player
+    </div>
 
-<p>
-  Level
-  <strong id="profileLevel">1</strong>
+    <p>
+      Level <strong id="profileLevel">1</strong>
+      ·
+      <strong id="profileXP">0</strong> XP
+    </p>
 
-  ·
+    <br>
 
-  <strong id="profileXP">0</strong>
-  XP
-</p>
+    <h3>Change Profile Name</h3>
 
-<br>
+    <input
+      id="nameInput"
+      class="nameInput"
+      maxlength="20"
+      placeholder="Enter a username"
+    >
 
-<h3>
-  Change Profile Name
-</h3>
+    <button
+      class="action"
+      onclick="changeProfileName()"
+    >
+      Save Profile Name
+    </button>
 
-<input
-  id="nameInput"
-  class="name-input"
-  maxlength="20"
-  placeholder="Enter a username"
->
+    <br><br>
 
-<button
-  class="action"
-  onclick="changeProfileName()">
+    <div class="notice">
+      Profile names cannot contain inappropriate language,
+      email addresses, phone numbers, physical addresses,
+      or other private information.
+    </div>
 
-  Save Profile Name
+    <br>
 
-</button>
+    <p>
+      Challenges completed:
+      <strong id="profileChallenges">0</strong>
+    </p>
 
-<br>
-<br>
+    <br>
 
-<div class="notice">
+    <button
+      class="action"
+      onclick="dailyReward()"
+    >
+      🎁 Claim Daily Reward
+    </button>
 
-  Profile names cannot contain inappropriate
-  language, emails, phone numbers, addresses,
-  or other private information.
-
-</div>
-
-<br>
-
-<p>
-  Challenges completed:
-  <strong id="profileChallenges">0</strong>
-</p>
-
-<br>
-
-<button
-  class="action"
-  onclick="dailyReward()">
-
-  🎁 Claim Daily Reward
-
-</button>
-
-</div>
+  </div>
 
 </section>
 
@@ -1090,577 +937,574 @@ id="profileName">
 </footer>
 
 
+<!-- MODAL -->
+
+<div id="modal" class="modal">
+
+  <div class="modalBox">
+
+    <button
+      class="close"
+      onclick="closeModal()"
+    >
+      ✕
+    </button>
+
+    <div id="modalContent"></div>
+
+  </div>
+
+</div>
+
+
 <script>
 
-/* ==================================================
+/* =====================================
    GAME LIST
-================================================== */
+===================================== */
 
-const games=[
+const games = [
 
-{
-name:"Steal a Brainrot",
-platform:"Roblox",
-category:"Collection",
-icon:"🧠",
-description:"Collect brainrots, explore the game and complete daily Game Zone challenges."
-},
+  {
+    name:"Steal a Brainrot",
+    platform:"Roblox",
+    category:"Collection",
+    icon:"🧠",
+    description:"Collect brainrots, explore and complete daily challenges."
+  },
 
-{
-name:"Brookhaven RP",
-platform:"Roblox",
-category:"Roleplay",
-icon:"🏠",
-description:"Explore the city, roleplay and discover different locations."
-},
+  {
+    name:"Brookhaven RP",
+    platform:"Roblox",
+    category:"Roleplay",
+    icon:"🏠",
+    description:"Explore the city and create your own roleplay."
+  },
 
-{
-name:"Adopt Me!",
-platform:"Roblox",
-category:"Roleplay",
-icon:"🐶",
-description:"Collect pets, explore and complete pet-related goals."
-},
+  {
+    name:"Adopt Me!",
+    platform:"Roblox",
+    category:"Pets",
+    icon:"🐾",
+    description:"Collect pets and complete pet-related goals."
+  },
 
-{
-name:"Blox Fruits",
-platform:"Roblox",
-category:"Adventure",
-icon:"🍊",
-description:"Explore islands, complete quests and progress through the world."
-},
+  {
+    name:"Blox Fruits",
+    platform:"Roblox",
+    category:"Adventure",
+    icon:"🍊",
+    description:"Explore islands and complete quests."
+  },
 
-{
-name:"RIVALS",
-platform:"Roblox",
-category:"Action",
-icon:"⚔️",
-description:"Play competitive matches and work toward gameplay goals."
-},
+  {
+    name:"RIVALS",
+    platform:"Roblox",
+    category:"Action",
+    icon:"⚔️",
+    description:"Play competitive matches and improve your skills."
+  },
 
-{
-name:"Dress to Impress",
-platform:"Roblox",
-category:"Fashion",
-icon:"👗",
-description:"Create outfits, complete themes and compete in rounds."
-},
+  {
+    name:"Dress to Impress",
+    platform:"Roblox",
+    category:"Fashion",
+    icon:"👗",
+    description:"Create outfits and compete in themed rounds."
+  },
 
-{
-name:"99 Nights in the Forest",
-platform:"Roblox",
-category:"Survival",
-icon:"🌲",
-description:"Explore the forest and survive challenging objectives."
-},
+  {
+    name:"99 Nights in the Forest",
+    platform:"Roblox",
+    category:"Survival",
+    icon:"🌲",
+    description:"Explore the forest and survive."
+  },
 
-{
-name:"Murder Mystery 2",
-platform:"Roblox",
-category:"Mystery",
-icon:"🔎",
-description:"Play mystery rounds and complete special Game Zone challenges."
-},
+  {
+    name:"Murder Mystery 2",
+    platform:"Roblox",
+    category:"Mystery",
+    icon:"🔎",
+    description:"Play mystery rounds and collect different items."
+  },
 
-{
-name:"Tower of Hell",
-platform:"Roblox",
-category:"Obby",
-icon:"🏗️",
-description:"Take on difficult obstacle courses and improve your records."
-},
+  {
+    name:"Tower of Hell",
+    platform:"Roblox",
+    category:"Obby",
+    icon:"🏗️",
+    description:"Take on difficult obstacle courses."
+  },
 
-{
-name:"MeepCity",
-platform:"Roblox",
-category:"Social",
-icon:"🏙️",
-description:"Explore a social Roblox world filled with activities."
-},
+  {
+    name:"MeepCity",
+    platform:"Roblox",
+    category:"Social",
+    icon:"🏙️",
+    description:"Explore a social Roblox world."
+  },
 
-{
-name:"Piggy",
-platform:"Roblox",
-category:"Adventure",
-icon:"🐷",
-description:"Explore maps, solve objectives and discover the story."
-},
+  {
+    name:"Piggy",
+    platform:"Roblox",
+    category:"Adventure",
+    icon:"🐷",
+    description:"Solve objectives and explore maps."
+  },
 
-{
-name:"DOORS",
-platform:"Roblox",
-category:"Adventure",
-icon:"🚪",
-description:"Explore mysterious rooms and complete exploration challenges."
-},
+  {
+    name:"DOORS",
+    platform:"Roblox",
+    category:"Adventure",
+    icon:"🚪",
+    description:"Explore mysterious rooms."
+  },
 
-{
-name:"The Mimic",
-platform:"Roblox",
-category:"Adventure",
-icon:"👹",
-description:"Explore story-based environments inspired by mythology."
-},
+  {
+    name:"The Mimic",
+    platform:"Roblox",
+    category:"Adventure",
+    icon:"👹",
+    description:"Explore story-based environments."
+  },
 
-{
-name:"Pet Simulator 99",
-platform:"Roblox",
-category:"Collection",
-icon:"🐾",
-description:"Collect pets and explore a large progression-focused world."
-},
+  {
+    name:"Pet Simulator 99",
+    platform:"Roblox",
+    category:"Collection",
+    icon:"🐾",
+    description:"Collect pets and progress through the world."
+  },
 
-{
-name:"Jailbreak",
-platform:"Roblox",
-category:"Adventure",
-icon:"🚓",
-description:"Explore a huge Roblox world with missions and activities."
-},
+  {
+    name:"Jailbreak",
+    platform:"Roblox",
+    category:"Adventure",
+    icon:"🚓",
+    description:"Explore the huge Roblox world."
+  },
 
-{
-name:"Arsenal",
-platform:"Roblox",
-category:"Action",
-icon:"🎯",
-description:"Play fast-paced rounds and complete gameplay goals."
-},
+  {
+    name:"Arsenal",
+    platform:"Roblox",
+    category:"Action",
+    icon:"🎯",
+    description:"Play fast-paced matches."
+  },
 
-{
-name:"Natural Disaster Survival",
-platform:"Roblox",
-category:"Survival",
-icon:"🌪️",
-description:"Survive changing events and try to make it through each round."
-},
+  {
+    name:"Natural Disaster Survival",
+    platform:"Roblox",
+    category:"Survival",
+    icon:"🌪️",
+    description:"Try to survive different disasters."
+  },
 
-{
-name:"Work at a Pizza Place",
-platform:"Roblox",
-category:"Simulation",
-icon:"🍕",
-description:"Work together and complete different jobs."
-},
+  {
+    name:"Work at a Pizza Place",
+    platform:"Roblox",
+    category:"Simulation",
+    icon:"🍕",
+    description:"Work different jobs and earn money."
+  },
 
-{
-name:"Evade",
-platform:"Roblox",
-category:"Action",
-icon:"🏃",
-description:"Move through maps while completing fast-paced objectives."
-},
+  {
+    name:"Evade",
+    platform:"Roblox",
+    category:"Action",
+    icon:"🏃",
+    description:"Escape danger and survive rounds."
+  },
 
-{
-name:"The Strongest Battlegrounds",
-platform:"Roblox",
-category:"Action",
-icon:"💥",
-description:"Compete in fast matches and work toward personal goals."
-},
+  {
+    name:"The Strongest Battlegrounds",
+    platform:"Roblox",
+    category:"Action",
+    icon:"💥",
+    description:"Compete in fast-paced battles."
+  },
 
-{
-name:"Fortnite Battle Royale",
-platform:"Fortnite",
-category:"Battle Royale",
-icon:"🏝️",
-description:"Explore Fortnite's Battle Royale experience."
-},
+  {
+    name:"Fortnite Battle Royale",
+    platform:"Fortnite",
+    category:"Battle Royale",
+    icon:"🏝️",
+    description:"Play Fortnite Battle Royale."
+  },
 
-{
-name:"Fortnite Reload",
-platform:"Fortnite",
-category:"Battle Royale",
-icon:"🔄",
-description:"Play fast-paced Reload matches."
-},
+  {
+    name:"Fortnite Reload",
+    platform:"Fortnite",
+    category:"Battle Royale",
+    icon:"🔄",
+    description:"Play fast-paced Reload matches."
+  },
 
-{
-name:"Blitz Royale",
-platform:"Fortnite",
-category:"Battle Royale",
-icon:"⚡",
-description:"Jump into quick Fortnite matches."
-},
+  {
+    name:"Fortnite OG",
+    platform:"Fortnite",
+    category:"Battle Royale",
+    icon:"🕹️",
+    description:"Explore Fortnite's classic-style experience."
+  },
 
-{
-name:"Fortnite OG",
-platform:"Fortnite",
-category:"Battle Royale",
-icon:"🕹️",
-description:"Explore Fortnite's classic-style experience."
-},
+  {
+    name:"Fort M",
+    platform:"Fortnite",
+    category:"Creative",
+    icon:"🏰",
+    description:"Explore the popular Fortnite Creative experience."
+  },
 
-{
-name:"GO GOATED! Zone Wars",
-platform:"Fortnite",
-category:"Creative",
-icon:"🐐",
-description:"Practice and compete in a Zone Wars experience."
-},
+  {
+    name:"1v1 With Every Gun",
+    platform:"Fortnite",
+    category:"Creative",
+    icon:"🐝",
+    description:"HIVE Creative map."
+  },
 
-{
-name:"BOX PVP",
-platform:"Fortnite",
-category:"Creative",
-icon:"📦",
-description:"Fight through fast Creative matches."
-},
+  {
+    name:"Pillars by HIVE",
+    platform:"Fortnite",
+    category:"Creative",
+    icon:"🐝",
+    description:"HIVE Creative map."
+  },
 
-{
-name:"Piece Control",
-platform:"Fortnite",
-category:"Creative",
-icon:"🧱",
-description:"Practice building and editing skills."
-},
+  {
+    name:"Squid Game",
+    platform:"Fortnite",
+    category:"Creative",
+    icon:"🦑",
+    description:"Play a popular Squid Game-style Creative experience."
+  },
 
-{
-name:"The Pit",
-platform:"Fortnite",
-category:"Creative",
-icon:"🥊",
-description:"Jump into a Creative combat experience."
-},
+  {
+    name:"GO GOATED! Zone Wars",
+    platform:"Fortnite",
+    category:"Creative",
+    icon:"🐐",
+    description:"Compete in Zone Wars."
+  },
 
-{
-name:"Red vs Blue",
-platform:"Fortnite",
-category:"Creative",
-icon:"🔴",
-description:"Compete in team-based Creative matches."
-},
+  {
+    name:"BOX PVP",
+    platform:"Fortnite",
+    category:"Creative",
+    icon:"📦",
+    description:"Play fast Creative matches."
+  },
 
-{
-name:"Deathrun",
-platform:"Fortnite",
-category:"Creative",
-icon:"🏃‍♂️",
-description:"Complete obstacle courses and improve your time."
-},
+  {
+    name:"Piece Control",
+    platform:"Fortnite",
+    category:"Creative",
+    icon:"🧱",
+    description:"Practice building and editing."
+  },
 
-{
-name:"Minigame Box PVP",
-platform:"Fortnite",
-category:"Creative",
-icon:"🎮",
-description:"Play a collection of fast Creative activities."
-},
+  {
+    name:"The Pit",
+    platform:"Fortnite",
+    category:"Creative",
+    icon:"🥊",
+    description:"Jump into a Creative combat experience."
+  },
 
-{
-name:"Beat the Brainrot",
-platform:"Fortnite",
-category:"Creative",
-icon:"🧠",
-description:"Take on brainrot-themed Creative gameplay."
-}
+  {
+    name:"Red vs Blue",
+    platform:"Fortnite",
+    category:"Creative",
+    icon:"🔴",
+    description:"Compete in team-based matches."
+  },
+
+  {
+    name:"Deathrun",
+    platform:"Fortnite",
+    category:"Creative",
+    icon:"🏃‍♂️",
+    description:"Complete obstacle courses."
+  },
+
+  {
+    name:"Minigame Box PVP",
+    platform:"Fortnite",
+    category:"Creative",
+    icon:"🎮",
+    description:"Play different Creative activities."
+  },
+
+  {
+    name:"Beat the Brainrot",
+    platform:"Fortnite",
+    category:"Creative",
+    icon:"🧠",
+    description:"Take on a brainrot-themed Creative experience."
+  }
 
 ];
 
 
-/* ==================================================
+/* =====================================
+   TIER LIST DATA
+
+   RIVALS IS INTENTIONALLY NOT INCLUDED.
+===================================== */
+
+const tierLists = {
+
+  "MM2 Items":{
+    icon:"🔪",
+    description:"Rank MM2 collectible items.",
+    items:[
+      "Godly Item",
+      "Ancient Item",
+      "Vintage Item",
+      "Unique Item",
+      "Legendary Item",
+      "Rare Item",
+      "Uncommon Item",
+      "Common Item"
+    ]
+  },
+
+  "Steal a Brainrot":{
+    icon:"🧠",
+    description:"Rank Brainrots.",
+    items:[
+      "Secret Brainrot",
+      "OG Brainrot",
+      "Mythic Brainrot",
+      "Legendary Brainrot",
+      "Epic Brainrot",
+      "Rare Brainrot",
+      "Uncommon Brainrot",
+      "Common Brainrot"
+    ]
+  },
+
+  "Adopt Me! Pets":{
+    icon:"🐾",
+    description:"Rank Adopt Me! pets.",
+    items:[
+      "Mega Legendary",
+      "Neon Legendary",
+      "Legendary",
+      "Ultra-Rare",
+      "Rare",
+      "Uncommon",
+      "Common"
+    ]
+  },
+
+  "Pet Simulator 99":{
+    icon:"🐾",
+    description:"Rank collectible pets and categories.",
+    items:[
+      "Huge",
+      "Titanic",
+      "Exclusive",
+      "Mythic",
+      "Legendary",
+      "Epic",
+      "Rare",
+      "Basic"
+    ]
+  },
+
+  "Dress to Impress Items":{
+    icon:"👗",
+    description:"Rank fashion and collectible categories.",
+    items:[
+      "Iconic",
+      "Amazing",
+      "Great",
+      "Good",
+      "Basic"
+    ]
+  },
+
+  "Blox Fruits Items":{
+    icon:"🍊",
+    description:"Rank collectible categories.",
+    items:[
+      "Mythical",
+      "Legendary",
+      "Rare",
+      "Uncommon",
+      "Common"
+    ]
+  },
+
+  "Brookhaven Items":{
+    icon:"🏠",
+    description:"Rank Brookhaven item categories.",
+    items:[
+      "Top Tier",
+      "Great",
+      "Good",
+      "Okay",
+      "Basic"
+    ]
+  },
+
+  "Piggy Items":{
+    icon:"🐷",
+    description:"Rank Piggy collectible categories.",
+    items:[
+      "Top Tier",
+      "Great",
+      "Good",
+      "Okay",
+      "Basic"
+    ]
+  },
+
+  "DOORS Items":{
+    icon:"🚪",
+    description:"Rank collectible categories.",
+    items:[
+      "Top Tier",
+      "Great",
+      "Good",
+      "Okay",
+      "Basic"
+    ]
+  }
+
+};
+
+
+/* =====================================
    DAILY CHALLENGES
-================================================== */
+===================================== */
 
-const dailyChallengeTemplates=[
+const challengeTemplates = [
 
-{
-title:"First Match",
-description:"Play one full match or round.",
-xp:25
-},
-
-{
-title:"Explorer",
-description:"Explore an area you don't normally visit.",
-xp:30
-},
-
-{
-title:"Objective Master",
-description:"Complete one objective in the game.",
-xp:35
-},
-
-{
-title:"Try Something New",
-description:"Try something you've never tried before.",
-xp:30
-},
-
-{
-title:"Improve",
-description:"Try to improve on a previous attempt.",
-xp:40
-},
-
-{
-title:"Discovery",
-description:"Discover something new in the game.",
-xp:35
-},
-
-{
-title:"Round Ready",
-description:"Play through one complete round.",
-xp:25
-},
-
-{
-title:"Finish Strong",
-description:"Complete a goal without quitting early.",
-xp:40
-},
-
-{
-title:"Different Strategy",
-description:"Try a different strategy than usual.",
-xp:45
-},
-
-{
-title:"Community Challenge",
-description:"Complete a goal while playing with other players.",
-xp:50
-},
-
-{
-title:"Skill Check",
-description:"Practice one skill for a full round.",
-xp:35
-},
-
-{
-title:"Challenge Run",
-description:"Complete a round while focusing on one specific goal.",
-xp:45
-},
-
-{
-title:"Game Explorer",
-description:"Visit somewhere you haven't visited before.",
-xp:30
-},
-
-{
-title:"Daily Gamer",
-description:"Play the game today and complete one goal.",
-xp:25
-},
-
-{
-title:"Master Attempt",
-description:"Give your best attempt at a difficult goal.",
-xp:55
-}
+  ["First Match","Play one complete round.",25],
+  ["Explorer","Explore somewhere new.",30],
+  ["Objective Master","Complete one objective.",35],
+  ["Try Something New","Try something you've never tried.",30],
+  ["Improve","Try to beat your previous attempt.",40],
+  ["Discovery","Discover something new.",35],
+  ["Round Ready","Finish one complete round.",25],
+  ["Finish Strong","Complete a goal without quitting early.",40],
+  ["Different Strategy","Try a different strategy.",45],
+  ["Game Explorer","Visit somewhere you haven't visited.",30],
+  ["Skill Check","Practice one skill during a round.",35],
+  ["Challenge Run","Focus on one specific goal.",45],
+  ["Daily Gamer","Play the game and complete a goal.",25],
+  ["Master Attempt","Give your best attempt at a difficult goal.",55],
+  ["Team Player","Complete a goal while playing with others.",40]
 
 ];
 
 
-/* ==================================================
-   DAILY CHALLENGE DATE SYSTEM
-================================================== */
+function today(){
 
-function getToday(){
+  const d=new Date();
 
-  const now=new Date();
-
-  return now.getFullYear()+"-"+
-    String(now.getMonth()+1).padStart(2,"0")+"-"+
-    String(now.getDate()).padStart(2,"0");
+  return d.getFullYear()+"-"+
+    String(d.getMonth()+1).padStart(2,"0")+"-"+
+    String(d.getDate()).padStart(2,"0");
 
 }
 
 
 function createDailyChallenges(){
 
-  const today=getToday();
+  const current=today();
 
-  const savedDate=
-    localStorage.getItem(
-      "gameZoneChallengeDate"
-    );
+  const saved=localStorage.getItem(
+    "gameZoneChallengeDate"
+  );
 
+  if(saved===current)return;
 
-  if(savedDate!==today){
+  const all=[];
 
-    const newChallenges=[];
+  games.forEach(game=>{
 
+    const shuffled=[...challengeTemplates]
+      .sort(()=>Math.random()-.5);
 
-    games.forEach(game=>{
+    shuffled.slice(0,15).forEach((c,index)=>{
 
-      const shuffled=[
-        ...dailyChallengeTemplates
-      ].sort(
-        ()=>Math.random()-.5
-      );
+      all.push({
 
+        id:
+          current+"-"+
+          game.name.replace(/[^a-zA-Z0-9]/g,"")+
+          "-"+index,
 
-      shuffled
-      .slice(0,10)
-      .forEach((template,index)=>{
-
-        newChallenges.push({
-
-          id:
-            today+"-"+
-            game.name.replace(
-              /[^a-zA-Z0-9]/g,
-              ""
-            )+
-            "-"+
-            index,
-
-          game:game.name,
-
-          title:template.title,
-
-          description:template.description,
-
-          xp:template.xp
-
-        });
+        game:game.name,
+        title:c[0],
+        description:c[1],
+        xp:c[2]
 
       });
 
     });
 
+  });
 
-    localStorage.setItem(
-      "gameZoneDailyChallenges",
-      JSON.stringify(newChallenges)
-    );
+  localStorage.setItem(
+    "gameZoneDailyChallenges",
+    JSON.stringify(all)
+  );
 
-
-    localStorage.setItem(
-      "gameZoneChallengeDate",
-      today
-    );
-
-  }
+  localStorage.setItem(
+    "gameZoneChallengeDate",
+    current
+  );
 
 }
 
 
-function getDailyChallenges(){
+function getChallenges(){
 
   createDailyChallenges();
-
 
   return JSON.parse(
     localStorage.getItem(
       "gameZoneDailyChallenges"
     )
-  ) || [];
+  )||[];
 
 }
 
 
-/* ==================================================
-   TIER LIST DATA
-================================================== */
-
-const tierLists={
-
-"MM2 Weapons":{
-
-icon:"🔎",
-
-description:
-"Rank different Murder Mystery 2 weapons.",
-
-items:[
-"Chroma Godly",
-"Godly Knife",
-"Godly Gun",
-"Ancient",
-"Vintage",
-"Unique",
-"Legendary",
-"Rare",
-"Uncommon",
-"Common"
-]
-
-},
-
-"Steal a Brainrot":{
-
-icon:"🧠",
-
-description:
-"Rank brainrots however you want.",
-
-items:[
-"Secret Brainrot",
-"OG Brainrot",
-"Mythic Brainrot",
-"Legendary Brainrot",
-"Epic Brainrot",
-"Rare Brainrot",
-"Uncommon Brainrot",
-"Common Brainrot"
-]
-
-},
-
-"Adopt Me Pets":{
-
-icon:"🐾",
-
-description:
-"Rank different Adopt Me pet categories.",
-
-items:[
-"Mega Legendary",
-"Neon Legendary",
-"Legendary",
-"Ultra-Rare",
-"Rare",
-"Uncommon",
-"Common",
-"Favorite"
-]
-
-}
-
-};
-
-
-/* ==================================================
-   USER STATE
-================================================== */
+/* =====================================
+   PLAYER STATE
+===================================== */
 
 let state=JSON.parse(
-  localStorage.getItem(
-    "gameZoneState"
-  )
-) || {
+  localStorage.getItem("gameZoneState")
+)||{
 
   xp:0,
-
   level:1,
-
   challenges:[],
-
   games:[],
-
   achievements:[],
-
   profileName:"Game Zone Player",
-
-  tierListsUsed:0
+  tierListsUsed:0,
+  lastReward:""
 
 };
 
 
 let currentPlatform="all";
+let currentTier=null;
+let selectedItem=null;
 
-let currentTierList=null;
 
-
-/* ==================================================
+/* =====================================
    SAVE
-================================================== */
+===================================== */
 
 function save(){
 
@@ -1672,253 +1516,161 @@ function save(){
 }
 
 
-/* ==================================================
-   PAGE NAVIGATION
-================================================== */
+/* =====================================
+   PAGES
+===================================== */
 
 function showPage(id){
 
   document
-  .querySelectorAll(".page")
-  .forEach(page=>
-    page.classList.remove("active")
-  );
+    .querySelectorAll(".page")
+    .forEach(p=>p.classList.remove("active"));
 
+  const page=document.getElementById(id);
 
-  const page=
-    document.getElementById(id);
-
-
-  if(page){
-    page.classList.add("active");
-  }
-
+  if(page)page.classList.add("active");
 
   window.scrollTo({
     top:0,
     behavior:"smooth"
   });
 
-
   updateAll();
 
 }
 
 
-/* ==================================================
+/* =====================================
    XP
-================================================== */
+===================================== */
 
 function addXP(amount){
 
   state.xp+=amount;
 
-
-  while(
-    state.xp>=state.level*100
-  ){
+  while(state.xp>=state.level*100){
 
     state.xp-=state.level*100;
-
     state.level++;
 
   }
 
-
   checkAchievements();
 
   save();
-
   updateAll();
 
 }
 
 
-/* ==================================================
-   UPDATE
-================================================== */
+/* =====================================
+   GENERAL UPDATE
+===================================== */
 
 function updateAll(){
 
-  document.getElementById(
-    "level"
-  ).textContent=state.level;
+  const needed=state.level*100;
 
-
-  document.getElementById(
-    "xp"
-  ).textContent=state.xp;
-
-
-  const needed=
-    state.level*100;
-
-
-  document.getElementById(
-    "xpFill"
-  ).style.width=
-    Math.min(
-      100,
-      state.xp/needed*100
-    )+"%";
-
-
-  document.getElementById(
-    "xpText"
-  ).textContent=
-    (needed-state.xp)+
-    " XP until next level";
-
-
-  document.getElementById(
-    "statLevel"
-  ).textContent=
+  document.getElementById("level").textContent=
     state.level;
 
-
-  document.getElementById(
-    "statXP"
-  ).textContent=
+  document.getElementById("xp").textContent=
     state.xp;
 
+  document.getElementById("xpFill").style.width=
+    Math.min(100,state.xp/needed*100)+"%";
 
-  document.getElementById(
-    "statChallenges"
-  ).textContent=
+  document.getElementById("xpText").textContent=
+    (needed-state.xp)+" XP until next level";
+
+  document.getElementById("statLevel").textContent=
+    state.level;
+
+  document.getElementById("statXP").textContent=
+    state.xp;
+
+  document.getElementById("statChallenges").textContent=
     state.challenges.length;
 
-
-  document.getElementById(
-    "statGames"
-  ).textContent=
+  document.getElementById("statGames").textContent=
     state.games.length;
 
-
-  document.getElementById(
-    "statAchievements"
-  ).textContent=
+  document.getElementById("statAchievements").textContent=
     state.achievements.length;
 
-
-  document.getElementById(
-    "statTierLists"
-  ).textContent=
+  document.getElementById("statTierLists").textContent=
     state.tierListsUsed;
 
-
-  document.getElementById(
-    "profileLevel"
-  ).textContent=
+  document.getElementById("profileLevel").textContent=
     state.level;
 
-
-  document.getElementById(
-    "profileXP"
-  ).textContent=
+  document.getElementById("profileXP").textContent=
     state.xp;
 
-
-  document.getElementById(
-    "profileChallenges"
-  ).textContent=
+  document.getElementById("profileChallenges").textContent=
     state.challenges.length;
 
-
-  document.getElementById(
-    "profileName"
-  ).textContent=
+  document.getElementById("profileName").textContent=
     state.profileName;
 
-
+  renderGames();
   renderAchievements();
-
   renderLeaderboard();
-
   renderTierButtons();
 
 }
 
 
-/* ==================================================
-   PLATFORM
-================================================== */
+/* =====================================
+   GAMES
+===================================== */
 
 function setPlatform(platform,button){
 
   currentPlatform=platform;
 
-
   document
-  .querySelectorAll(
-    ".platforms button"
-  )
-  .forEach(b=>
-    b.classList.remove("active")
-  );
-
+    .querySelectorAll(".platforms button")
+    .forEach(b=>b.classList.remove("active"));
 
   button.classList.add("active");
-
 
   renderGames();
 
 }
 
 
-/* ==================================================
-   RENDER GAMES
-================================================== */
-
 function renderGames(){
 
-  const grid=
-    document.getElementById(
-      "gameGrid"
-    );
+  const grid=document.getElementById("gameGrid");
 
-
-  let list=
-    games.filter(game=>{
-
-      if(currentPlatform==="all")
-        return true;
-
-      return game.platform===
-        currentPlatform;
-
-    });
-
-
-  const search=
-    document
+  const search=document
     .getElementById("search")
     .value
-    .toLowerCase()
-    .trim();
+    .toLowerCase();
 
+  const list=games.filter(game=>{
 
-  if(search){
+    const platformMatch=
+      currentPlatform==="all"||
+      game.platform===currentPlatform;
 
-    list=list.filter(game=>
-
+    const searchMatch=
       (
         game.name+
-        game.platform+
         game.category+
         game.description
       )
       .toLowerCase()
-      .includes(search)
+      .includes(search);
 
-    );
+    return platformMatch&&searchMatch;
 
-  }
-
+  });
 
   grid.innerHTML="";
 
-
-  if(list.length===0){
+  if(!list.length){
 
     grid.innerHTML=
       '<div class="empty">No games found.</div>';
@@ -1927,45 +1679,33 @@ function renderGames(){
 
   }
 
-
   list.forEach(game=>{
 
-    const card=
-      document.createElement("div");
-
+    const card=document.createElement("div");
 
     card.className="card";
 
-
     card.innerHTML=`
 
-      <div class="game-icon">
+      <div class="gameIcon">
         ${game.icon}
       </div>
 
       <small>
-        ${game.platform}
+        ${escapeHTML(game.platform)}
         ·
-        ${game.category}
+        ${escapeHTML(game.category)}
       </small>
 
-      <h3>
-        ${escapeHTML(game.name)}
-      </h3>
+      <h3>${escapeHTML(game.name)}</h3>
 
-      <p>
-        ${escapeHTML(game.description)}
-      </p>
+      <p>${escapeHTML(game.description)}</p>
 
-      <button
-        onclick="openGame(${JSON.stringify(game.name)})">
-
+      <button onclick='openGame(${JSON.stringify(game.name)})'>
         🎮 Open Game Hub
-
       </button>
 
     `;
-
 
     grid.appendChild(card);
 
@@ -1974,984 +1714,372 @@ function renderGames(){
 }
 
 
-/* ==================================================
-   OPEN GAME
-================================================== */
+/* =====================================
+   GAME HUB
+===================================== */
 
 function openGame(name){
 
-  const game=
-    games.find(g=>g.name===name);
+  const game=games.find(g=>g.name===name);
 
+  if(!game)return;
 
   if(!state.games.includes(name)){
 
     state.games.push(name);
-
     addXP(10);
 
   }
 
-
-  const daily=
-    getDailyChallenges()
+  const challenges=getChallenges()
     .filter(c=>c.game===name);
 
+  document.getElementById("modalContent").innerHTML=`
 
-  const modal=
-    document.getElementById("modal");
-
-
-  if(!modal){
-
-    createModal();
-
-  }
-
-
-  document.getElementById(
-    "modalContent"
-  ).innerHTML=`
-
-    <div class="game-icon">
+    <div class="gameIcon">
       ${game.icon}
     </div>
 
-    <h2>
-      ${escapeHTML(game.name)}
-    </h2>
+    <h2>${escapeHTML(game.name)}</h2>
 
     <br>
 
-    <p>
-      ${escapeHTML(game.description)}
-    </p>
+    <p>${escapeHTML(game.description)}</p>
 
     <br>
 
-    <p>
-      <strong>Platform:</strong>
-      ${escapeHTML(game.platform)}
-    </p>
-
-    <p>
-      <strong>Category:</strong>
-      ${escapeHTML(game.category)}
-    </p>
-
-    <br>
-
-    <span class="daily-badge">
+    <span class="badge">
       🔄 DAILY CHALLENGES
     </span>
 
     <br><br>
 
-    <p class="challenge-count">
-      ${daily.length} new challenges today.
+    <p>
+      ${challenges.length} challenges are available today.
     </p>
 
     <button
       class="action"
-      onclick="showGameChallenges(${JSON.stringify(name)})">
-
-      🎯 View Today's Challenges
-
+      onclick='showGameChallenges(${JSON.stringify(name)})'
+    >
+      🎯 View Challenges
     </button>
 
   `;
 
-
-  document.getElementById(
-    "modal"
-  ).style.display="flex";
-
+  document.getElementById("modal").style.display="flex";
 
   save();
 
 }
 
-
-/* ==================================================
-   MODAL
-================================================== */
-
-function createModal(){
-
-  const modal=
-    document.createElement("div");
-
-
-  modal.id="modal";
-
-  modal.className="modal";
-
-
-  modal.innerHTML=`
-
-    <div class="modal-box">
-
-      <button
-        class="close"
-        onclick="closeModal()">
-
-        ✕
-
-      </button>
-
-      <div id="modalContent"></div>
-
-    </div>
-
-  `;
-
-
-  document.body.appendChild(modal);
-
-}
-
-
-function closeModal(){
-
-  const modal=
-    document.getElementById("modal");
-
-
-  if(modal)
-    modal.style.display="none";
-
-}
-
-
-/* ==================================================
-   GAME CHALLENGES
-================================================== */
 
 function showGameChallenges(name){
 
-  closeModal();
-
-
-  const old=
-    document.getElementById(
-      "gameChallengesPage"
-    );
-
-
-  if(old)
-    old.remove();
-
-
-  const gameChallenges=
-    getDailyChallenges()
+  const challenges=getChallenges()
     .filter(c=>c.game===name);
 
+  document.getElementById("modalContent").innerHTML=`
 
-  let html=`
+    <h2>🎯 ${escapeHTML(name)} Challenges</h2>
 
-    <button
-      class="back"
-      onclick="showPage('home')">
+    <br>
 
-      ← Back to Home
+    <p>
+      These challenges refresh every day.
+    </p>
 
-    </button>
+    <br>
 
-    <div class="section-title">
+    ${challenges.map(c=>{
 
-      <h2>
-        🎯 ${escapeHTML(name)}
-      </h2>
+      const done=state.challenges.includes(c.id);
 
-    </div>
+      return `
 
+        <div class="card challenge ${done?"completed":""}">
 
-    <div class="big-panel">
+          <h3>${escapeHTML(c.title)}</h3>
 
-      <span class="daily-badge">
-        🔄 DAILY CHALLENGES
-      </span>
+          <p>
+            ${escapeHTML(c.description)}
+          </p>
 
-      <br><br>
+          <br>
 
-      <h3>
-        Today's Challenges
-      </h3>
+          <span class="badge">
+            +${c.xp} XP
+          </span>
 
-      <br>
+          <br>
 
-      <p>
-        These challenges automatically refresh
-        every day.
-      </p>
+          ${
+            done
+            ?
+            '<p class="status">✓ Completed</p>'
+            :
+            `<button
+              class="action"
+              onclick='completeChallenge(${JSON.stringify(c.id)})'
+            >
+              ✓ Claim Challenge
+            </button>`
+          }
 
-      <br>
+        </div>
 
-      <p>
-        Complete the challenge in the actual game,
-        then claim it here.
-      </p>
+        <br>
 
-    </div>
+      `;
 
-    <div class="grid">
+    }).join("")}
 
   `;
 
-
-  gameChallenges.forEach(challenge=>{
-
-    const completed=
-      state.challenges.includes(
-        challenge.id
-      );
-
-
-    html+=`
-
-      <div
-        class="card challenge
-        ${completed?"completed":""}">
-
-        <small>
-          🎮 ${escapeHTML(challenge.game)}
-        </small>
-
-        <h3>
-          ${escapeHTML(challenge.title)}
-        </h3>
-
-        <p>
-          ${escapeHTML(challenge.description)}
-        </p>
-
-        <br>
-
-        <strong>
-          +${challenge.xp} XP
-        </strong>
-
-        <button
-          class="action"
-          onclick="completeChallenge(${JSON.stringify(challenge.id)})"
-          ${completed?"disabled":""}>
-
-          ${
-            completed
-            ?"✅ Completed"
-            :"I completed this challenge"
-          }
-
-        </button>
-
-        <p class="status">
-
-          ${
-            completed
-            ?"Challenge claimed ✓"
-            :"Not completed yet"
-          }
-
-        </p>
-
-      </div>
-
-    `;
-
-  });
-
-
-  html+="</div>";
-
-
-  const page=
-    document.createElement("section");
-
-
-  page.id=
-    "gameChallengesPage";
-
-
-  page.className=
-    "page active";
-
-
-  page.innerHTML=html;
-
-
-  document
-    .querySelectorAll(".page")
-    .forEach(p=>
-      p.classList.remove("active")
-    );
-
-
-  document
-    .querySelector("main")
-    .appendChild(page);
-
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
 }
 
 
-/* ==================================================
-   COMPLETE CHALLENGE
-================================================== */
+/* =====================================
+   CHALLENGES
+===================================== */
 
 function completeChallenge(id){
 
-  if(
-    state.challenges.includes(id)
-  ) return;
+  if(state.challenges.includes(id))return;
 
-
-  const challenge=
-    getDailyChallenges()
+  const challenge=getChallenges()
     .find(c=>c.id===id);
 
-
-  if(!challenge) return;
-
-
-  if(
-    !confirm(
-      "Did you actually complete this challenge in the game?"
-    )
-  ) return;
-
+  if(!challenge)return;
 
   state.challenges.push(id);
 
-
   addXP(challenge.xp);
 
-
-  save();
-
-
-  alert(
-    "🎉 Challenge claimed! +"+
-    challenge.xp+
-    " XP"
-  );
-
-}
-
-
-/* ==================================================
-   ACHIEVEMENTS
-================================================== */
-
-const achievements=[
-
-{
-id:"first",
-icon:"🌟",
-title:"First Steps",
-description:"Explore your first game."
-},
-
-{
-id:"challenge",
-icon:"🎯",
-title:"Challenge Accepted",
-description:"Complete your first challenge."
-},
-
-{
-id:"five",
-icon:"🔥",
-title:"Getting Serious",
-description:"Complete 5 challenges."
-},
-
-{
-id:"ten",
-icon:"💎",
-title:"Dedicated Gamer",
-description:"Complete 10 challenges."
-},
-
-{
-id:"twentyfive",
-icon:"🚀",
-title:"Challenge Machine",
-description:"Complete 25 challenges."
-},
-
-{
-id:"fifty",
-icon:"👑",
-title:"Challenge King",
-description:"Complete 50 challenges."
-},
-
-{
-id:"level5",
-icon:"⭐",
-title:"Level 5",
-description:"Reach Level 5."
-},
-
-{
-id:"level10",
-icon:"🌌",
-title:"Level 10",
-description:"Reach Level 10."
-},
-
-{
-id:"explorer",
-icon:"🧭",
-title:"Explorer",
-description:"Explore 10 different games."
-},
-
-{
-id:"allgames",
-icon:"🌎",
-title:"Game Zone Traveler",
-description:"Explore 25 different games."
-}
-
-];
-
-
-function checkAchievements(){
-
-  const unlocked=[];
-
-
-  if(state.games.length>=1)
-    unlocked.push("first");
-
-
-  if(state.challenges.length>=1)
-    unlocked.push("challenge");
-
-
-  if(state.challenges.length>=5)
-    unlocked.push("five");
-
-
-  if(state.challenges.length>=10)
-    unlocked.push("ten");
-
-
-  if(state.challenges.length>=25)
-    unlocked.push("twentyfive");
-
-
-  if(state.challenges.length>=50)
-    unlocked.push("fifty");
-
-
-  if(state.level>=5)
-    unlocked.push("level5");
-
-
-  if(state.level>=10)
-    unlocked.push("level10");
-
-
-  if(state.games.length>=10)
-    unlocked.push("explorer");
-
-
-  if(state.games.length>=25)
-    unlocked.push("allgames");
-
-
-  unlocked.forEach(id=>{
-
-    if(
-      !state.achievements.includes(id)
-    ){
-
-      state.achievements.push(id);
-
-    }
-
-  });
-
+  showGameChallenges(challenge.game);
 
   save();
 
 }
 
 
-function renderAchievements(){
+function dailyReward(){
 
-  const box=
-    document.getElementById(
-      "achievementList"
-    );
+  const d=today();
 
+  if(state.lastReward===d){
 
-  if(!box) return;
+    alert("You already claimed today's reward! 🎁");
 
+    return;
 
-  box.innerHTML="";
+  }
 
+  state.lastReward=d;
 
-  achievements.forEach(a=>{
+  addXP(50);
 
-    const unlocked=
-      state.achievements.includes(a.id);
+  alert("🎁 Daily reward claimed! +50 XP");
 
-
-    const card=
-      document.createElement("div");
-
-
-    card.className="card";
-
-
-    card.innerHTML=`
-
-      <div style="font-size:35px">
-        ${a.icon}
-      </div>
-
-      <h3>
-        ${escapeHTML(a.title)}
-        ${unlocked?" ✅":""}
-      </h3>
-
-      <p>
-        ${escapeHTML(a.description)}
-      </p>
-
-      <br>
-
-      <small>
-        ${unlocked?"UNLOCKED":"LOCKED"}
-      </small>
-
-    `;
-
-
-    box.appendChild(card);
-
-  });
+  save();
 
 }
 
 
-/* ==================================================
-   LEADERBOARD
-   NOT LIVE
-================================================== */
-
-function renderLeaderboard(){
-
-  const box=
-    document.getElementById(
-      "leaderboardList"
-    );
-
-
-  if(!box) return;
-
-
-  const players=[
-
-    {
-      name:state.profileName,
-      level:state.level
-    },
-
-    {
-      name:"PixelMaster",
-      level:27
-    },
-
-    {
-      name:"GameExplorer",
-      level:21
-    },
-
-    {
-      name:"RobloxLegend",
-      level:18
-    },
-
-    {
-      name:"FortniteFan",
-      level:15
-    }
-
-  ];
-
-
-  players.sort(
-    (a,b)=>b.level-a.level
-  );
-
-
-  box.innerHTML="";
-
-
-  players.forEach((player,index)=>{
-
-    const item=
-      document.createElement("div");
-
-
-    item.className="card";
-
-
-    item.style.display="flex";
-
-    item.style.alignItems="center";
-
-    item.style.gap="15px";
-
-
-    let medal;
-
-
-    if(index===0)
-      medal="🥇";
-
-    else if(index===1)
-      medal="🥈";
-
-    else if(index===2)
-      medal="🥉";
-
-    else
-      medal="#"+(index+1);
-
-
-    item.innerHTML=`
-
-      <div style="font-size:27px;min-width:45px">
-        ${medal}
-      </div>
-
-      <div style="flex:1">
-
-        <strong>
-          ${escapeHTML(player.name)}
-        </strong>
-
-        <br>
-
-        <small>
-          Level ${player.level}
-        </small>
-
-      </div>
-
-    `;
-
-
-    box.appendChild(item);
-
-  });
-
-}
-
-
-/* ==================================================
+/* =====================================
    TIER LIST BUTTONS
-================================================== */
+===================================== */
 
 function renderTierButtons(){
 
-  const box=
-    document.getElementById(
-      "tierListButtons"
-    );
+  const container=
+    document.getElementById("tierButtons");
 
+  if(!container)return;
 
-  if(!box) return;
+  container.innerHTML="";
 
+  Object.entries(tierLists).forEach(([name,data])=>{
 
-  box.innerHTML="";
-
-
-  Object.keys(tierLists)
-  .forEach(name=>{
-
-    const list=
-      tierLists[name];
-
-
-    const card=
-      document.createElement("div");
-
+    const card=document.createElement("div");
 
     card.className="card";
 
-
     card.innerHTML=`
 
-      <div style="font-size:38px">
-        ${list.icon}
+      <div class="gameIcon">
+        ${data.icon}
       </div>
 
-      <h3>
-        ${escapeHTML(name)}
-      </h3>
+      <h3>${escapeHTML(name)}</h3>
 
-      <p>
-        ${escapeHTML(list.description)}
-      </p>
+      <p>${escapeHTML(data.description)}</p>
 
       <button
-        class="action"
-        onclick="openTierList(${JSON.stringify(name)})">
-
-        📊 Build Tier List
-
+        onclick='openTierList(${JSON.stringify(name)})'
+      >
+        📊 Rank Items
       </button>
 
     `;
 
-
-    box.appendChild(card);
+    container.appendChild(card);
 
   });
 
 }
 
 
-/* ==================================================
-   OPEN DRAG TIER LIST
-================================================== */
+/* =====================================
+   OPEN TIER LIST
+===================================== */
 
 function openTierList(name){
 
-  currentTierList=name;
+  currentTier=name;
+  selectedItem=null;
 
+  const data=tierLists[name];
 
-  const list=
-    tierLists[name];
+  state.tierListsUsed++;
 
+  save();
 
-  const container=
-    document.getElementById(
-      "activeTierList"
-    );
+  const savedKey=
+    "gameZoneTier_"+name;
 
+  let saved=JSON.parse(
+    localStorage.getItem(savedKey)
+  );
 
-  let stored=
-    JSON.parse(
-      localStorage.getItem(
-        "tier-"+name
-      )
-    );
+  if(!saved){
 
-
-  if(!stored){
-
-    stored={
+    saved={
       S:[],
       A:[],
       B:[],
       C:[],
       D:[],
-      pool:[...list.items]
+      pool:[...data.items]
     };
 
   }
 
+  currentTierData=saved;
 
-  if(!stored.pool)
-    stored.pool=[];
+  renderActiveTierList();
 
-
-  const used=
-    [
-      ...stored.S,
-      ...stored.A,
-      ...stored.B,
-      ...stored.C,
-      ...stored.D
-    ];
+}
 
 
-  stored.pool=
-    list.items.filter(
-      item=>!used.includes(item)
-    );
+/* =====================================
+   CURRENT TIER DATA
+===================================== */
+
+let currentTierData=null;
 
 
-  localStorage.setItem(
-    "tier-"+name,
-    JSON.stringify(stored)
-  );
+function renderActiveTierList(){
 
+  if(!currentTier)return;
+
+  const data=tierLists[currentTier];
+
+  const container=
+    document.getElementById("activeTierList");
+
+  const tiers=["S","A","B","C","D"];
 
   container.innerHTML=`
 
-    <div class="big-panel tier-editor">
+    <div class="bigPanel">
 
       <h2>
-        ${list.icon}
-        ${escapeHTML(name)}
+        ${data.icon}
+        ${escapeHTML(currentTier)}
       </h2>
 
-      <br>
-
       <p>
-        Drag the items into whatever tier
-        YOU think they belong in.
+        ${escapeHTML(data.description)}
       </p>
 
-      <p class="tier-help">
-        💡 You can move an item between tiers
-        whenever you want.
+      <p class="help">
+        📱 Tap an item, then choose its tier.
+        <br>
+        💻 Drag items with your mouse.
       </p>
 
+    </div>
 
-      <div class="tier-row">
+    <div id="mobileRank" class="mobileRank">
 
-        <div class="tier-label">
-          S
-        </div>
+      <strong id="selectedText">
+        Select an item first.
+      </strong>
 
-        <div
-          class="tier-dropzone"
-          data-tier="S"
-          ondragover="allowDrop(event)"
-          ondrop="dropItem(event)"
-          ondragenter="dragEnter(event)"
-          ondragleave="dragLeave(event)">
+      <div class="mobileButtons">
 
-          ${renderTierItems(stored.S)}
-
-        </div>
+        <button onclick="mobileRank('S')">S</button>
+        <button onclick="mobileRank('A')">A</button>
+        <button onclick="mobileRank('B')">B</button>
+        <button onclick="mobileRank('C')">C</button>
+        <button onclick="mobileRank('D')">D</button>
 
       </div>
 
+    </div>
 
-      <div class="tier-row">
+    <div class="tierEditor">
 
-        <div class="tier-label">
-          A
-        </div>
+      ${tiers.map(t=>`
 
-        <div
-          class="tier-dropzone"
-          data-tier="A"
-          ondragover="allowDrop(event)"
-          ondrop="dropItem(event)"
-          ondragenter="dragEnter(event)"
-          ondragleave="dragLeave(event)">
+        <div class="tierRow">
 
-          ${renderTierItems(stored.A)}
+          <div class="tierLabel">
+            ${t}
+          </div>
 
-        </div>
+          <div
+            class="tierZone"
+            data-tier="${t}"
+            ondragover="allowDrop(event)"
+            ondrop="dropItem(event,'${t}')"
+          >
 
-      </div>
-
-
-      <div class="tier-row">
-
-        <div class="tier-label">
-          B
-        </div>
-
-        <div
-          class="tier-dropzone"
-          data-tier="B"
-          ondragover="allowDrop(event)"
-          ondrop="dropItem(event)"
-          ondragenter="dragEnter(event)"
-          ondragleave="dragLeave(event)">
-
-          ${renderTierItems(stored.B)}
-
-        </div>
-
-      </div>
-
-
-      <div class="tier-row">
-
-        <div class="tier-label">
-          C
-        </div>
-
-        <div
-          class="tier-dropzone"
-          data-tier="C"
-          ondragover="allowDrop(event)"
-          ondrop="dropItem(event)"
-          ondragenter="dragEnter(event)"
-          ondragleave="dragLeave(event)">
-
-          ${renderTierItems(stored.C)}
-
-        </div>
-
-      </div>
-
-
-      <div class="tier-row">
-
-        <div class="tier-label">
-          D
-        </div>
-
-        <div
-          class="tier-dropzone"
-          data-tier="D"
-          ondragover="allowDrop(event)"
-          ondrop="dropItem(event)"
-          ondragenter="dragEnter(event)"
-          ondragleave="dragLeave(event)">
-
-          ${renderTierItems(stored.D)}
-
-        </div>
-
-      </div>
-
-
-      <div class="item-pool">
-
-        <h3>
-          📦 Items to Rank
-        </h3>
-
-        <p class="tier-help">
-          Drag items from here into a tier.
-        </p>
-
-        <div
-          class="pool-dropzone"
-          data-tier="pool"
-          ondragover="allowDrop(event)"
-          ondrop="dropItem(event)"
-          ondragenter="dragEnter(event)"
-          ondragleave="dragLeave(event)">
-
-          <div class="pool-items">
-
-            ${renderTierItems(stored.pool)}
+            ${(currentTierData[t]||[])
+              .map(item=>createTierItem(item))
+              .join("")}
 
           </div>
 
         </div>
 
+      `).join("")}
+
+    </div>
+
+    <div class="pool">
+
+      <h3>📦 Items to Rank</h3>
+
+      <div
+        class="poolItems"
+        id="poolItems"
+        ondragover="allowDrop(event)"
+        ondrop="dropItem(event,'pool')"
+      >
+
+        ${(currentTierData.pool||[])
+          .map(item=>createTierItem(item))
+          .join("")}
+
       </div>
 
-
       <button
-        class="reset-button"
-        onclick="resetTierList()">
-
+        class="reset"
+        onclick="resetTierList()"
+      >
         🔄 Reset This Tier List
-
       </button>
 
     </div>
@@ -2961,33 +2089,103 @@ function openTierList(name){
 }
 
 
-/* ==================================================
-   RENDER DRAGGABLE ITEMS
-================================================== */
+/* =====================================
+   CREATE ITEM
+===================================== */
 
-function renderTierItems(items){
+function createTierItem(item){
 
-  return items.map(item=>`
+  const safe=escapeHTML(item);
+
+  return `
 
     <div
-      class="tier-item"
+      class="tierItem ${selectedItem===item?"selected":""}"
       draggable="true"
-      data-item="${escapeHTML(item)}"
+      data-item="${safe}"
       ondragstart="dragStart(event)"
-      ondragend="dragEnd(event)">
-
-      ${escapeHTML(item)}
-
+      onclick='selectTierItem(${JSON.stringify(item)})'
+    >
+      ${safe}
     </div>
 
-  `).join("");
+  `;
 
 }
 
 
-/* ==================================================
-   DRAG FUNCTIONS
-================================================== */
+/* =====================================
+   MOBILE RANKING
+===================================== */
+
+function selectTierItem(item){
+
+  selectedItem=item;
+
+  const panel=document.getElementById("mobileRank");
+  const text=document.getElementById("selectedText");
+
+  if(panel)panel.classList.add("show");
+
+  if(text)
+    text.textContent=
+      "Selected: "+item+" — choose a tier";
+
+  renderActiveTierList();
+
+  const newPanel=document.getElementById("mobileRank");
+
+  if(newPanel)
+    newPanel.classList.add("show");
+
+}
+
+
+function mobileRank(tier){
+
+  if(!selectedItem){
+
+    alert("Tap an item first!");
+
+    return;
+
+  }
+
+  moveItem(selectedItem,tier);
+
+  selectedItem=null;
+
+  renderActiveTierList();
+
+}
+
+
+function moveItem(item,tier){
+
+  const tiers=["S","A","B","C","D","pool"];
+
+  tiers.forEach(t=>{
+
+    if(!currentTierData[t])return;
+
+    currentTierData[t]=
+      currentTierData[t].filter(x=>x!==item);
+
+  });
+
+  currentTierData[tier].push(item);
+
+  localStorage.setItem(
+    "gameZoneTier_"+currentTier,
+    JSON.stringify(currentTierData)
+  );
+
+}
+
+
+/* =====================================
+   COMPUTER DRAGGING
+===================================== */
 
 let draggedItem=null;
 
@@ -2995,42 +2193,20 @@ let draggedItem=null;
 function dragStart(event){
 
   draggedItem=
-    event.target.dataset.item;
+    event.currentTarget.dataset.item;
 
+  event.currentTarget.classList.add("dragging");
 
-  event.target.classList.add(
-    "dragging"
-  );
+  if(event.dataTransfer){
 
+    event.dataTransfer.effectAllowed="move";
 
-  event.dataTransfer.effectAllowed=
-    "move";
+    event.dataTransfer.setData(
+      "text/plain",
+      draggedItem
+    );
 
-
-  event.dataTransfer.setData(
-    "text/plain",
-    draggedItem
-  );
-
-}
-
-
-function dragEnd(event){
-
-  event.target.classList.remove(
-    "dragging"
-  );
-
-
-  document
-  .querySelectorAll(
-    ".drag-over"
-  )
-  .forEach(element=>
-    element.classList.remove(
-      "drag-over"
-    )
-  );
+  }
 
 }
 
@@ -3039,427 +2215,381 @@ function allowDrop(event){
 
   event.preventDefault();
 
-}
-
-
-function dragEnter(event){
-
-  event.preventDefault();
-
-
   const zone=
     event.currentTarget;
 
-
-  zone.classList.add(
-    "drag-over"
-  );
+  zone.classList.add("dragOver");
 
 }
 
 
-function dragLeave(event){
+document.addEventListener("dragleave",event=>{
 
-  event.currentTarget
-    .classList.remove(
-      "drag-over"
-    );
+  if(event.target.classList &&
+     event.target.classList.contains("tierZone")){
 
-}
-
-
-function dropItem(event){
-
-  event.preventDefault();
-
-
-  const zone=
-    event.currentTarget;
-
-
-  zone.classList.remove(
-    "drag-over"
-  );
-
-
-  const item=
-    event.dataTransfer.getData(
-      "text/plain"
-    );
-
-
-  if(!item || !currentTierList)
-    return;
-
-
-  const key=
-    "tier-"+currentTierList;
-
-
-  const stored=
-    JSON.parse(
-      localStorage.getItem(key)
-    );
-
-
-  if(!stored)
-    return;
-
-
-  /*
-     Remove the item from EVERY tier
-     and the item pool first.
-  */
-
-  [
-    "S",
-    "A",
-    "B",
-    "C",
-    "D",
-    "pool"
-  ].forEach(tier=>{
-
-    stored[tier]=
-      stored[tier].filter(
-        x=>x!==item
-      );
-
-  });
-
-
-  /*
-     Put it into the tier where
-     the player dropped it.
-  */
-
-  const destination=
-    zone.dataset.tier;
-
-
-  if(
-    [
-      "S",
-      "A",
-      "B",
-      "C",
-      "D",
-      "pool"
-    ].includes(destination)
-  ){
-
-    stored[destination].push(item);
+    event.target.classList.remove("dragOver");
 
   }
 
-
-  localStorage.setItem(
-    key,
-    JSON.stringify(stored)
-  );
+});
 
 
-  save();
+function dropItem(event,tier){
 
+  event.preventDefault();
 
-  /*
-     Rebuild the tier list so the
-     change appears immediately.
-  */
+  if(event.dataTransfer){
 
-  openTierList(
-    currentTierList
-  );
+    draggedItem=
+      event.dataTransfer.getData("text/plain")||
+      draggedItem;
+
+  }
+
+  if(!draggedItem)return;
+
+  moveItem(draggedItem,tier);
+
+  draggedItem=null;
+
+  renderActiveTierList();
 
 }
 
 
-/* ==================================================
+/* =====================================
    RESET TIER LIST
-================================================== */
+===================================== */
 
 function resetTierList(){
 
-  if(!currentTierList)
-    return;
+  if(!currentTier)return;
 
+  if(!confirm("Reset this tier list?"))return;
 
-  if(
-    !confirm(
-      "Reset this tier list?"
-    )
-  )
-    return;
+  currentTierData={
+    S:[],
+    A:[],
+    B:[],
+    C:[],
+    D:[],
+    pool:[...tierLists[currentTier].items]
+  };
 
-
-  localStorage.removeItem(
-    "tier-"+currentTierList
+  localStorage.setItem(
+    "gameZoneTier_"+currentTier,
+    JSON.stringify(currentTierData)
   );
 
+  selectedItem=null;
 
-  openTierList(
-    currentTierList
+  renderActiveTierList();
+
+}
+
+
+/* =====================================
+   LEADERBOARD
+===================================== */
+
+function renderLeaderboard(){
+
+  const list=
+    document.getElementById("leaderboardList");
+
+  if(!list)return;
+
+  list.innerHTML=`
+
+    <div class="card">
+
+      <h3>1. ${escapeHTML(state.profileName)}</h3>
+
+      <p>
+        Level ${state.level}
+        ·
+        ${state.xp} XP
+      </p>
+
+    </div>
+
+    <br>
+
+    <div class="notice">
+      🌐 Live global players will be added
+      when the Game Zone database is connected.
+    </div>
+
+  `;
+
+}
+
+
+/* =====================================
+   ACHIEVEMENTS
+===================================== */
+
+const achievements=[
+
+  {
+    id:"firstGame",
+    icon:"🎮",
+    name:"First Game",
+    description:"Explore your first game.",
+    check:()=>state.games.length>=1
+  },
+
+  {
+    id:"fiveGames",
+    icon:"🕹️",
+    name:"Game Explorer",
+    description:"Explore 5 games.",
+    check:()=>state.games.length>=5
+  },
+
+  {
+    id:"challenge1",
+    icon:"🎯",
+    name:"Challenge Accepted",
+    description:"Complete your first challenge.",
+    check:()=>state.challenges.length>=1
+  },
+
+  {
+    id:"challenge10",
+    icon:"🔥",
+    name:"Challenge Hunter",
+    description:"Complete 10 challenges.",
+    check:()=>state.challenges.length>=10
+  },
+
+  {
+    id:"level5",
+    icon:"⭐",
+    name:"Level 5",
+    description:"Reach level 5.",
+    check:()=>state.level>=5
+  },
+
+  {
+    id:"tier1",
+    icon:"📊",
+    name:"Ranker",
+    description:"Use a tier list.",
+    check:()=>state.tierListsUsed>=1
+  }
+
+];
+
+
+function checkAchievements(){
+
+  achievements.forEach(a=>{
+
+    if(
+      a.check() &&
+      !state.achievements.includes(a.id)
+    ){
+
+      state.achievements.push(a.id);
+
+    }
+
+  });
+
+}
+
+
+function renderAchievements(){
+
+  const container=
+    document.getElementById("achievementList");
+
+  if(!container)return;
+
+  checkAchievements();
+
+  container.innerHTML="";
+
+  achievements.forEach(a=>{
+
+    const unlocked=
+      state.achievements.includes(a.id);
+
+    const card=document.createElement("div");
+
+    card.className="card";
+
+    card.innerHTML=`
+
+      <div class="gameIcon">
+        ${a.icon}
+      </div>
+
+      <h3>
+        ${escapeHTML(a.name)}
+      </h3>
+
+      <p>
+        ${escapeHTML(a.description)}
+      </p>
+
+      <br>
+
+      <span class="badge">
+        ${unlocked?"✓ Unlocked":"🔒 Locked"}
+      </span>
+
+    `;
+
+    container.appendChild(card);
+
+  });
+
+}
+
+
+/* =====================================
+   PROFILE SAFETY
+===================================== */
+
+const badWords=[
+  "fuck",
+  "shit",
+  "bitch",
+  "asshole",
+  "nigger",
+  "faggot"
+];
+
+
+function containsBadLanguage(name){
+
+  const lower=name.toLowerCase();
+
+  return badWords.some(word=>
+    lower.includes(word)
   );
 
 }
 
 
-/* ==================================================
+function containsPrivateInfo(name){
+
+  const emailPattern=
+    /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i;
+
+  const phonePattern=
+    /(?:\+?1[-.\s]?)?(?:\(?\d{3}\)?[-.\s]?)\d{3}[-.\s]?\d{4}/;
+
+  const addressPattern=
+    /\b\d{1,6}\s+[A-Za-z0-9]+\s+(street|st|road|rd|avenue|ave|drive|dr|lane|ln|court|ct|way)\b/i;
+
+  return(
+    emailPattern.test(name)||
+    phonePattern.test(name)||
+    addressPattern.test(name)
+  );
+
+}
+
+
+function changeProfileName(){
+
+  const input=
+    document.getElementById("nameInput");
+
+  const name=input.value.trim();
+
+  if(name.length<3){
+
+    alert("Your username needs at least 3 characters.");
+
+    return;
+
+  }
+
+  if(name.length>20){
+
+    alert("Your username is too long.");
+
+    return;
+
+  }
+
+  if(containsBadLanguage(name)){
+
+    alert(
+      "This username cannot be used due to inappropriate language."
+    );
+
+    return;
+
+  }
+
+  if(containsPrivateInfo(name)){
+
+    alert(
+      "Please don't use private information such as an email, phone number, or address."
+    );
+
+    return;
+
+  }
+
+  state.profileName=name;
+
+  input.value="";
+
+  save();
+
+  updateAll();
+
+  alert("Profile name updated! 🎮");
+
+}
+
+
+/* =====================================
    RANDOM GAME
-================================================== */
+===================================== */
 
 function randomGame(){
 
   const game=
-    games[
-      Math.floor(
-        Math.random()*games.length
-      )
-    ];
-
+    games[Math.floor(Math.random()*games.length)];
 
   openGame(game.name);
 
 }
 
 
-/* ==================================================
-   DAILY REWARD
-================================================== */
-
-function dailyReward(){
-
-  const today=
-    getToday();
-
-
-  const last=
-    localStorage.getItem(
-      "gameZoneDailyReward"
-    );
-
-
-  if(last===today){
-
-    alert(
-      "🎁 You already claimed today's reward!"
-    );
-
-    return;
-
-  }
-
-
-  localStorage.setItem(
-    "gameZoneDailyReward",
-    today
-  );
-
-
-  addXP(25);
-
-
-  alert(
-    "🎉 Daily reward claimed! +25 XP"
-  );
-
-}
-
-
-/* ==================================================
-   PROFILE NAME SAFETY
-================================================== */
-
-const bannedWords=[
-
-"fuck",
-"shit",
-"bitch",
-"asshole",
-"dick",
-"piss",
-"cunt",
-"nigger",
-"nigga",
-"fag",
-"porn",
-"sex",
-"nude",
-"naked"
-
-];
-
-
-function changeProfileName(){
-
-  const input=
-    document
-    .getElementById(
-      "nameInput"
-    )
-    .value
-    .trim();
-
-
-  if(!input){
-
-    alert(
-      "Please enter a profile name."
-    );
-
-    return;
-
-  }
-
-
-  if(input.length<3){
-
-    alert(
-      "Your profile name must be at least 3 characters."
-    );
-
-    return;
-
-  }
-
-
-  if(input.length>20){
-
-    alert(
-      "Your profile name is too long."
-    );
-
-    return;
-
-  }
-
-
-  const lower=
-    input.toLowerCase();
-
-
-  const containsBadWord=
-    bannedWords.some(
-      word=>
-        lower.includes(word)
-    );
-
-
-  const emailPattern=
-    /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i;
-
-
-  const phonePattern=
-    /(?:\+?1[\s.-]?)?(?:\(?\d{3}\)?[\s.-]?)\d{3}[\s.-]?\d{4}/;
-
-
-  const addressPattern=
-    /\b\d{1,5}\s+[A-Za-z0-9]+\s+(street|st|road|rd|avenue|ave|drive|dr|lane|ln|boulevard|blvd|way)\b/i;
-
-
-  if(containsBadWord){
-
-    alert(
-      "This user name cannot be used due to inappropriate language."
-    );
-
-    return;
-
-  }
-
-
-  if(emailPattern.test(input)){
-
-    alert(
-      "This user name cannot be used because it contains private information."
-    );
-
-    return;
-
-  }
-
-
-  if(phonePattern.test(input)){
-
-    alert(
-      "This user name cannot be used because it contains private information."
-    );
-
-    return;
-
-  }
-
-
-  if(addressPattern.test(input)){
-
-    alert(
-      "This user name cannot be used because it contains private information."
-    );
-
-    return;
-
-  }
-
-
-  state.profileName=input;
-
-
-  save();
-
-  updateAll();
-
-
-  document.getElementById(
-    "nameInput"
-  ).value="";
-
-
-  alert(
-    "✅ Profile name updated!"
-  );
-
-}
-
-
-/* ==================================================
-   SEARCH
-================================================== */
-
-function searchEverything(){
-
-  renderGames();
-
-}
-
-
-/* ==================================================
+/* =====================================
    ESCAPE HTML
-================================================== */
+===================================== */
 
 function escapeHTML(value){
 
   return String(value)
-
     .replace(/&/g,"&amp;")
-
     .replace(/</g,"&lt;")
-
     .replace(/>/g,"&gt;")
-
     .replace(/"/g,"&quot;")
-
     .replace(/'/g,"&#039;");
 
 }
 
 
-/* ==================================================
-   START GAME ZONE
-================================================== */
+/* =====================================
+   START
+===================================== */
 
 createDailyChallenges();
 
-createModal();
+checkAchievements();
+
+save();
 
 renderGames();
 
